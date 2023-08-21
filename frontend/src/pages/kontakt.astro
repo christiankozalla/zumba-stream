@@ -1,0 +1,34 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Grid from "../components/Grid.astro";
+import Address from "../components/Address.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<MainLayout
+title="Kontakt Salsa Dance Studio Mainz"
+description=""
+>
+<HeroShot 
+heading="Kontakt und Support"
+subheading="Du brauchst Hilfe bei einem Thema oder hast eine Frage? Schreibe uns eine Nachricht."
+/>
+<Section
+paddingClass="padding--120"
+>
+<Wrapper
+wrapperClass="wrapper">
+    <Grid
+    gridColumnClass="grid-2fr">
+    <div>
+    <h3>Salsa Dance Studio Mainz GmbH</h3>
+<Address />
+</div>
+<ContactForm/>
+</Grid>
+</Wrapper>
+</Section>
+</MainLayout>

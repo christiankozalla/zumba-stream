@@ -1,0 +1,126 @@
+---
+import { useSanityClient } from '@sanity/astro';
+import { urlForImage } from '../../lib/urlForImage';
+
+const posts = await useSanityClient().fetch(`*[_type == "post"]{ 
+    ..., 
+    categories[]->
+ }`);
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import HeroShot from '../../components/HeroShot.astro';
+import Section from '../../components/Section.astro';
+---
+
+
+<MainLayout
+title="Blog by Salsa Dance Studio"
+description="" 
+>
+<HeroShot 
+img={{
+    src:'',
+    alt:''
+}}
+heading="Alles über Zumba®, was du wissen solltest"
+text=""
+/>
+
+<div>
+    <Section>
+        <div class="flex">
+            {
+              posts && (
+                <ul class="blog__list">
+                  {posts.map((post) => (
+                    <div class="container">
+                    <li class="blog__list-items">
+                        <div class="blog-card__container">
+                            <a href={`/blog/${post.slug.current}`}>
+                                <img class="blog-card__img" src={urlForImage(post.mainImage).url()}  alt={ post.alt }>
+                            <div class="blog-card__meta">
+                                <p class="blog-card__date  p--no-margin">{ new Date(post.publishedAt).toLocaleDateString("de-DE")}</p>
+                                {Array.isArray(post.categories) && <h6 class="blog-card__category  link">{ post.categories.map((category) => { 
+                                    return <span>{ category.title || ''}</span>
+                                }) }</h6>}
+                            </div>
+                            <h4 class="blog-card__heading">{ post.title }</h4>
+                            <p class="blog-card__description">{ post.description }</p>
+                            <div class="flex--align-right">
+                            <a class="link  link--big" href={`/blog/${post.slug.current}`}>Jetzt lesen</a>
+                            </div>
+                            </a>
+                        </div>
+                    </li>
+                  </div>
+                  ))}
+                </ul>
+              )
+            }
+        </div>
+    </Section>
+</div>
+
+</MainLayout>
+
+<style>
+    .blog__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3em;
+    }
+
+    .blog__list-items {
+        list-style: none;
+    }
+
+    .blog-card__container {
+        padding: 24px;
+        border-radius: var(--border-radius);
+        box-shadow: 12px 16px 20px #F6F7F8;
+        padding: 1.8em;
+        background-color: #fff;
+    }    
+
+    .blog-card__container:hover {
+        pointer: cursor;
+    }
+
+    .blog-card__meta {
+        display: flex;
+        gap: 1em;
+        margin-top: 1em;
+    }
+
+    .blog-card__category {
+		font-size: var(--fs-xs);
+        color: var(--black-color);
+    }
+
+    .blog-card__date {
+        font-size: var(--fs-xs);
+        color: var(--black-color);
+    }
+
+    .blog-card__heading {
+        font-size: var(--fs-500);
+        color: var(--black-color);
+    }
+
+    .blog-card__description {
+        margin-bottom: 2em;
+        color: var(--black-color);
+    }
+
+    @media only screen and (min-width: 40em) {
+        .blog__list {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 60em) {
+        .blog__list {
+        grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

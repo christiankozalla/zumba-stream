@@ -1,0 +1,46 @@
+---
+const { video, heading, text, img } = Astro.props;
+
+---
+
+<div class="video-card__container">
+    { video &&
+    <video class="video-card__video" src={ video.src } controls poster={ video.thumbnail }/>
+    }
+    <h4 class="video-card__heading">{ heading }</h4>
+    <p class="video-card__text">{ text }</p>
+    {img &&
+    (<img class="video-card__icon" src={ img.src } alt={ img.alt } width="50"/>)
+    }
+</div>
+
+<style>
+
+.video-card__container {
+    border-radius: var(--border-radius);
+    box-shadow: 12px 16px 20px #F6F7F8;
+    padding: 1.8em;
+    background-color: #fff;
+    position: relative;
+}
+
+.video-card__video {
+    margin-bottom: 0.4em;
+    border-radius: var(--border-radius);
+}
+
+.video-card__text {
+    font-size: var(--fs-xs);
+}
+
+.video-card__icon {
+    margin-left: auto;
+    align-self: flex-end;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0.4em;
+}
+
+</style>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="1.655 2.25 55.339 52.919" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 62" height="62" width="65" data-type="ugc">
+    <g>
+        <defs>
+            <linearGradient id="fab53c10-04fd-49e1-8f42-bc7c3b599cc3" y2="100%" x2="65.133%" y1="5.67%" x1="35.144%">
+                <stop offset="0%" stop-color="#ABF5D9"/>
+                <stop offset="48.514%" stop-color="#588AC7"/>
+                <stop offset="100%" stop-color="#F553F0"/>
+            </linearGradient>
+        </defs>
+        <g stroke-width="2" stroke-linecap="round" fill-rule="evenodd">
+            <path stroke="#EF5CEF" d="M38.71 55.133c-.093-4.354-.738-7.2-1.94-8.54-1.2-1.339-2.923-2.391-5.169-3.154" fill="none"/>
+            <path stroke="#EF5CEF" d="M52.465 46.524c-2.1-.013-4.101.581-6.003 1.78-1.903 1.2-4.472 3.489-7.706 6.865" fill="none"/>
+            <path stroke="url(#fab53c10-04fd-49e1-8f42-bc7c3b599cc3)" d="M3.779 0c-5.039 12.522-5.039 23.146 0 31.873 5.038 8.727 13.26 14.227 24.664 16.5" fill="none" transform="scale(-1 1) rotate(50 -12.382 -20.253)"/>
+        </g>
+    </g>
+</svg>

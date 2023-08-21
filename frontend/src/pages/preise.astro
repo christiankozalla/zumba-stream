@@ -1,0 +1,116 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+import Grid from "../components/Grid.astro";
+import Wrapper from "../components/Wrapper.astro";
+import PriceCard from "../components/PriceCard.astro";
+import Button from "../components/Button.astro";
+import HeroShot from "../components/HeroShot.astro";
+
+---
+
+<MainLayout
+title="Preise von Salsa Dance Studio"
+description=""
+>
+<HeroShot
+heading="Preise für Online Zumba® -Stream"
+/>
+    <Section
+    paddingClass="padding--120">
+    <Wrapper
+    wrapperClass="wrapper">
+        <Grid
+        gridColumnClass="grid-3fr">
+        <PriceCard 
+        heading="Dein Einstieg"
+        subheading="unverbindlich"
+        oldPrice="34,99 €"
+        newPrice="9,99 € / Monat"
+        listItems={[
+            "7 Tage gratis testen",
+            "neue Videos jede Woche",
+            "keine Laufzeit",
+            "über 34 Stunden Zumba® Fitness, Zumba® Toning & STRONG Nation™",
+            "12+ lizensierte Trainer"
+        ]}
+        >
+        <Button 
+        alignClass="btn--center"
+        btn={{
+            href:'https://zim.uscreen.io/orders/customer_info?o=84206',
+            text:'Jetzt testen'
+        }} />
+        </PriceCard>
+        
+        <PriceCard 
+        heading="Monats-Abo"
+        subheading="Flexibel"
+        oldPrice="34,99 €"
+        newPrice="24,99 € / Monat"
+        listItems={[
+            "7 Tage gratis testen",
+            "neue Videos jede Woche",
+            "Laufzeiten einen Monat",
+            "mehr als 200 Stunden Zumba® Fitness, Zumba® Toning & STRONG Nation™ (Wert 1.600 €)",
+            "12+ lizensierte Trainer",
+            "Exclusive Members Area",
+            "flexible Laufzeit/monatlich kündbar"
+        ]}
+        >
+        <Button 
+        alignClass="btn--center"
+        btn={{
+            href:'https://zim.uscreen.io/orders/customer_info?o=78651',
+            text:'Jetzt testen'
+        }} />
+        </PriceCard>
+        
+        <PriceCard 
+        heading="Jahres-Abo"
+        subheading="58% sparen"
+        oldPrice="34,99 €"
+        newPrice="14,99 € / Monat"
+        listItems={[
+            "7 Tage gratis testen",
+            "neue Videos jede Woche",
+            "Laufzeiten ein Jahr",
+            "mehr als 200 Stunden Zumba® Fitness, Zumba® Toning & STRONG Nation™ (Wert 1.600 €)",
+            "12+ lizensierte Trainer",
+            "Exclusive Members Area",
+            "Einmalzahlung für ein Jahr (179,99 €)"
+        ]}
+        >
+        <Button
+        alignClass="btn--center" 
+        btn={{
+            href:'https://zim.uscreen.io/orders/customer_info?o=77420',
+            text:'Jetzt testen'
+        }} />
+        </PriceCard>
+        
+        <PriceCard 
+        heading="VIP-Abo"
+        subheading="Individuell"
+        oldPrice="119,99 €"
+        newPrice="24,99 € / Monat"
+        listItems={[
+            "mehr als 200 Stunden Zumba® Online (Wert 1.600 €)",
+            "4x monatlich eine Privatstunde online mit Kristina",
+            "Mindestlaufzeit 3 Monate",
+            "individuelle Beratung, um Deine Ziele zu erreichen",
+            "persönliche, auf Deine Vorlieben abgestimmte Stunden"
+        ]}
+        >
+        <Button 
+        alignClass="btn--center"
+        btn={{
+            href:'',
+            text:'Jetzt kaufen'
+        }} />
+        </PriceCard>
+        </Grid>
+    </Wrapper>
+</Section>
+
+</MainLayout>

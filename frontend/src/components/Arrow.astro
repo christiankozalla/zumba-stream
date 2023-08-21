@@ -1,0 +1,65 @@
+---
+const { img, directionClass, alignClass } = Astro.props;
+---
+
+<div class="arrow__container">
+    { img &&
+        <img src={ img.src } alt={ img.alt } class={`
+    arrow
+    ${directionClass}
+    ${alignClass}
+    `
+    } />
+    }
+</div>
+
+<style>
+    .arrow__container {
+        display: flex;
+        margin-top: -6em;
+    }
+
+    .arrow {
+        padding: 1rem 2rem;
+        display: flex;
+    }
+
+    .align--top {
+        display: flex;
+        margin-bottom: auto;
+        margin-top: 6em;
+        margin-right: 3em;
+    }
+
+    .align--bottom {
+        display: flex;
+        margin-top: auto;
+        margin-bottom: -2em;
+    }
+
+    .align--right {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .align--center {
+        margin: 0 auto;
+    }
+
+    .rotate--45 {
+        transform: rotate(45deg);
+    }
+
+    .rotate--90 {
+        transform: rotate(90deg);
+    }
+
+    .rotate--scale-1 {
+        transform: scaleX(-1);
+    }
+
+    @media only screen and (min-width: 40em) {
+        
+    }
+</style>
+

@@ -1,0 +1,73 @@
+---
+const { heading, subheading, oldPrice = "", newPrice, listItems } = Astro.props;
+
+interface Props {
+        listItems: string[];
+        heading: string;
+        subheading: string;
+        oldPrice: string;
+        newPrice: string;
+      }
+---
+
+<div class="price-card__container">
+    <h4 class="p__align--center">{ heading }</h4>
+    <h6 class="p__align--center">{ subheading }</h6>
+    <div class="price__container">
+    <h6 class="price--old">{ oldPrice }</h6>
+    <h5 class="price">{ newPrice }</h5>
+  </div>
+      
+      <ul class="price-card__list">
+          {
+              listItems.map((item) => (
+                <li class="price-card__list-item"><i class="icofont-check-circled  icofont-2x"></i>
+                  {item}
+                </li>
+              ))
+            }
+      </ul>
+  <slot />
+</div>
+
+<style>
+
+.price-card__container {
+    border-radius: var(--border-radius);
+    box-shadow: 12px 16px 20px #F6F7F8;
+    padding: 1.8em;
+    background-color: #fff;
+}
+
+.price__container {
+  margin: 1.6em 0;
+}
+
+.price,
+.price--old {
+  color: var(--first-color);
+  text-align: center;
+}
+
+.price--old {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.price-card__list {
+  list-style: none;
+}
+
+.price-card__list-item {
+  list-style: none;
+  padding: 0.4em;
+  display: flex;
+}
+
+.icofont-check-circled {
+  color: var(--first-color);
+  display: flex;
+  margin-right: 0.4em;
+}
+
+</style>

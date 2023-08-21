@@ -1,0 +1,133 @@
+---
+const { heading, text } = Astro.props;
+---
+
+
+
+<form class="form__container">
+        <label class="form__label" for="email">E-Mail</label>
+        <input class="form__input" id="email" name="email" placeholder="z.B. email@example.com">
+        <label class="form__label" for="topic">Thema</label>
+        <input class="form__input id=message" name="message" placeholder="z.B. Hilfe beim Abo">
+        <label class="form__label" for="message">Wie können wir dir helfen?</label>
+        <textarea class="form__input" id="message" name="message" placeholder="Worum geht's?"></textarea>
+        <input class="form__button" type="submit" value="Nachricht senden">
+</form>
+
+<style>
+
+    .form__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.2em;
+        padding: 2em 3em 3em 3em;
+        background-image: linear-gradient(120deg, var(--first-color), var(--third-color), var(--second-color), var(--fourth-color));
+        border-radius: 1em;
+        margin: 2em;
+    }
+
+    .form-text__container {
+        padding: 4em 2em;
+    }
+
+    .form__heading {
+        margin-bottom: 16px;
+    }
+
+    .form__text {
+        font-size: var(--fs-300);
+    }
+
+    .form__email {
+        color: var(--main-color);
+        font-size: 1.2rem;
+        margin-top: 1em;
+    }
+
+    .form__input {
+        padding: 1em;
+        border-radius: 1em;
+        border: none;
+        font-family: var(--ff-text);
+        font-size: var(--fs-xs);
+        color: var(--text-color);
+        font-weight: 300;
+        border-bottom: 4px solid #fff;
+        border-top: 4px solid #fff;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-bottom: 4px solid var(--first-color);
+    }
+
+    .form__label {
+        color: #fff;
+        font-family: var(--ff-heading);
+        font-size: var(--fs-300);
+        margin-top: 8px;
+        margin-bottom: -4px;
+    }
+
+    textarea {
+        height: 200px;
+        margin-bottom: 1em;
+    }
+
+    .form__button {
+        border: 1px solid var(--first-color);
+        background-color: var(--first-color);
+        color: #fff;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: var(--fs-300);
+        font-family: var(--ff-text);
+    }
+
+    .form__button:hover {
+        background-color: #fff;
+        color: var(--first-color);
+    }
+
+    @media only screen and (min-width: 40em) {
+        .grid__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form-text__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            width: 80%;
+            margin-left: 6%;
+            margin-top: 1%;
+        }
+
+        .form__heading {
+        margin-top: auto;
+        }
+
+        .form__email {
+        font-size: 1.6rem;
+    }
+    }
+
+    @media only screen and (min-width: 60em) {
+
+        .form__container {
+            margin: 2em;
+        }
+    }
+
+    @media only screen and (min-width: 80em) {
+
+        .form__container {
+            width: 100%;
+        }
+    }
+</style>

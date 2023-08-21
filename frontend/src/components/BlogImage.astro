@@ -1,0 +1,15 @@
+---
+const { img } = Astro.props;
+---
+
+<div class="image__container">
+    {img &&
+    (<img src={ img.src } alt={ img.alt }/>)
+    }
+</div>
+
+<style>
+    .image__container {
+        margin: 2em 0;
+    }
+</style>

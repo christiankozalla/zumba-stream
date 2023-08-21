@@ -1,0 +1,464 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Arrow from "../components/Arrow.astro";
+import Facts from "../components/Facts.astro";
+import Card from "../components/Card.astro";
+import Section from "../components/Section.astro";
+import Grid from "../components/Grid.astro";
+import Button from "../components/Button.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Figure from "../components/Figure.astro";
+import Video from "../components/Video.astro";
+import VideoCard from "../components/VideoCard.astro";
+---
+
+<MainLayout>
+	<HeroShot
+		heading="Stell' Dir vor, Du hast Spaß und verbrennst spielend Kalorien dabei"
+		subheading="Genial, oder? Mach mit bei Zumba® -Stream. Zumba® wann, wo und so oft du willst. Erreiche mit uns dein Wunschgewicht!"
+		btn={{
+			href:'https://zim.uscreen.io/join',
+			text:'7 Tage kostenlos testen'
+		}}
+		backgroundImgClass="teaser__background-img3"
+		img={{
+			src:'/images/dancer-graphic.webp',
+			alt:'Graphic Dancer',
+			width:'360'
+		}}
+	/>
+
+	<!-- FACTS -->
+	<Section
+	paddingClass="padding--top-negative"
+	>
+		<Wrapper
+		wrapperClass="wrapper">
+		<Grid 
+		gridColumnClass="grid-4fr--arrow"
+		gridMarginClass="grid__margin-bottom--120">
+		<Arrow 
+			img={{
+				src:'/images/arrow-color-gradient.svg',
+				alt:'Arrow pointing down'
+			}}
+			/>
+			<Facts 
+				nr="200"
+				text="Stunden Zumba® als Flatrate"
+			/>
+			<Facts 
+				nr="50"
+				text="Cent pro Tag im Jahresabo"
+			/>
+			<Facts 
+				nr="13"
+				text="lizensierte Zumba® Instruktorinnen"
+			/>
+		</Grid>
+		</Wrapper>
+	</Section>
+
+	<!-- VIDEO -->
+<Section 
+heading="Tanz dich fit mit Zumba® -Stream"
+headingColorClass="section__heading--white"
+backgroundImgClass="linear-gradient"
+paddingClass="padding--30"
+>
+    <Wrapper
+    wrapperClass="wrapper">
+        <Video
+        video={{
+            src:'/videos/welcome-mainz-compressed.mp4',
+            width:'800'
+        }}
+        />
+    </Wrapper>
+</Section>
+
+<!-- DU HAST KEINEN BOCK -->
+<Section
+paddingClass="padding--120"
+>
+	<Wrapper
+	wrapperClass="wrapper">
+
+	<Grid 
+	gridColumnClass="grid-2fr"
+	>
+		<div class="row--span-2">
+			<h2 class="p__align--left">Fit werden und abnehmen mit Zumba® -Stream. Jederzeit und von überall.</h2>
+			<h3 class="p__align--left">Du hast keinen Bock mehr</h3>
+			<p>Heute Sport! Aber eigentlich hast du keine Lust...</p>
+			<p>Du raffst dich auf. Oh nee, es regnet! Nagut. Du fährst los.</p> 
+			<p>Es ist voll. Alles steht. Die Straßen sind verstopft wie dein Abflussrohr letzten Monat. Für den Weg zum Fitnesstudio brauchst du 20 Minuten, anstatt 10.</p>
+			<p>Du suchtst einen Parkplatz. Und suchst und suchst. Du hast es geschafft. In der Umkleidekabine merkst du, dass du deine Sportschuhe vergessen hast. Die Umkleide ist rappelvoll.</p> 
+			<p>Dein Kurs fällt heute aus. Einen alternativen Trainingplan gibt es nicht. Du entscheidest dich an den Maschinen zu trainieren. Du wartest. Du zähltst Sets und Reps, achtest auf die Ausführung während ein Muskelprotz neben dir stöhnt.</p> 
+			<p>Die Umkleide ist immer noch voll. Nach 3 Stunden bist du wieder zu Hause und fragst dich: Gibt es nicht was besseres als Gym?</p>
+		</div>
+
+
+		<Grid
+		gridColumnClass="grid-2fr--arrow"
+		>
+			<Card 
+			img={{
+				src:'/images/exercises.svg',
+				alt:''
+			}}
+			text="Du bist es leid alleine im Fitness Studio an Geräten zu sitzen?"
+			sizeClass="card__container--smaller"
+			/>
+			<Arrow 
+			img={{
+				src:'/images/arrow-color-gradient.svg',
+				alt:'Arrow pointing down'
+			}}
+			alignClass="align--bottom"
+			directionClass="rotate--scale-1"
+			/>
+		</Grid>
+
+		<Grid
+		gridColumnClass="grid-2fr-arrow--reverse">
+			<div></div>
+			<Card 
+			img={{
+				src:'/images/workout.svg',
+				alt:''
+			}}
+			text="Du hast keine Lust auf Workouts, die sich schon wieder nach Arbeit anfühlen?"
+			sizeClass="card__container--smaller"
+			/>
+		</Grid>
+
+		<Grid 
+		gridColumnClass="grid-2fr--arrow"
+		gridGapClass="grid__gap--smaller">
+			<Card 
+			img={{
+				src:'/images/streaming-tv-app.svg',
+				alt:''
+			}}
+			text="Oder ein schlechtes Gewissen, weil du schon wieder nicht beim Sport warst?!"
+			marginClass="card__container--span-2"
+			sizeClass="card__container--smaller"
+			/>
+			<Arrow 
+			img={{
+				src:'/images/arrow-color-gradient.svg',
+				alt:'Arrow pointing down'
+			}}
+			alignClass="align--top"
+			directionClass="rotate--scale-1"
+			/>
+		</Grid>
+	</Wrapper>
+
+	
+</Section>
+
+<!-- WAS WÄRE WENN -->
+<Section
+paddingClass="padding--00"
+backgroundImgClass="color-patch--small">
+	<Wrapper
+	wrapperClass="wrapper--smaller">
+	<Arrow 
+			img={{
+				src:'/images/arrow-color-gradient.svg',
+				alt:'Arrow pointing down'
+			}}
+			alignClass="align--top"
+			directionClass="rotate--45"
+			/>
+		<h3 class="p__align--left">Ja! Was wäre wenn</h3>
+		<p>Du hast Bock dich zu bewegen. Und zwar jetzt. </p>
+		<p>Du schalltest Zumba® -Stream ein. Die Musik wummert durch dein Wohnzimmer. Deine Arme, Beine und Hüfte bewegen sich von selbst.</p> 
+		<p>Du schalltest den Kopf aus, tanzt und hast Spaß. Du verbrennst Kalorien wie trockenes Holz in einem Lagerfeuer. Dein Blick fällt auf die Uhr. Du trainierst bereits seit einer Stunde. </p>
+		<p>Wow!</p> 
+		<p>Es fühlt es sich an wie ein Kurzurlaub, dabei bist du Zuhause.</p>
+	</Wrapper>
+</Section>
+
+<!-- CASE STUDY -->
+<Section
+paddingClass="padding--60"
+>
+	<Wrapper
+	wrapperClass="wrapper">
+	<Grid
+	gridColumnClass="grid-2fr"
+	gridGapClass="grid__gap">
+	<Figure
+	figure={{
+		src:'/images/data.svg',
+		alt:'Diagramm zu Zumba®: Mit Zumba® verbrennt man mehr Kalorien als mit Fahrradfahren, Yoga, Aerobic, Gewicht heben',
+	}}
+	/>
+		<div>
+			<h2 class="p__align--left">Du verbrennst mehr Kalorien als beim Fahrradfahren</h2>
+			<p>Wusstest du, dass Zumba® mehr Kalorien verbrennt, als Fahrradfahren oder Yoga? Das kommt daher, dass Du beim Zumba® durch die Musik "getragen" wirst.</p>
+			<p>Zum einen bleibst du so länger aktiv.</p>
+			<p>Zum anderen bewegst Du beim Tanzen, komplett ohne darüber nachzudenken, gleichzeitig sehr viele unterschiedliche Muskelpartien - auch die, von denen Du nicht mal wusstest, dass Du sie hast:-)!</p>
+			<p>Kurz gesagt: Kopf aus - Spaß + Fitness an!</p>
+			<Button 
+			btn={{
+				href:'',
+				text:'Mehr im Blog'
+			}}
+			/>
+			</div>
+	</Grid>
+	</Wrapper>
+</Section>
+
+<!-- FACTS ÜBER ZUMBA SECTION -->
+<Section
+paddingClass="padding--60"
+>
+    <Wrapper 
+    wrapperClass="wrapper">
+	<h2>Zumba® macht Spaß und Fit</h2>
+    <Grid
+    gridColumnClass="grid-3fr"
+	gridGapClass="grid__gap--smaller">
+	<div>
+    <Facts
+    alignItemsClass="align-items--start" 
+    heading="Du verbesserst Deine Fitness"
+    nr="1"
+    text="Da Zumba® eine hochintensive und aerobe Cardio-Aktivität ist, stärkst du Dein Herz-Kreislauf-System. Das Training erhöht Deine Lungenkapazität und reduziert das Risiko von Herzerkrankungen."/>
+	</div>
+	<Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du verbrennst Kalorien"
+    nr="2"
+    text="Mit Zumba® verbrennst du Kalorien bis zu 600 kcal pro Workout. Du verlierst Gewicht, fühlst dich nach einer Stunde Zumba® ausgepowert aber auch erfrischt und glücklich."/>
+    <Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du verbesserst deine Koordination"
+    nr="3"
+    text="Du bewegst Deine Beine, Arme und Hüfte im Einklang. Wenn du regelmäßig Zumba® machst, wirst Du Deine Koordination verbessern."/>
+	<div class="col--span-2  row--2">
+    <Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du verbesserst Deine Muskelkraft und -ausdauer"
+    nr="4"
+    text="Du kräftigst und formst Deine Muskeln, insbesondere Deine Beine, Po und Bauch. Beim Zumba® Toning werden zusätzlich gezielt die Arme, aber auch die Rückenmuskulatur trainiert. Beim STRONG Nation™ hast Du das perfekte Ganzkörper-Muskeltaining zum Auspowern."/>
+</div>
+<div class="row--span-2  row--2  col--3">
+    <Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du verbesserst Deine Stimmung und baust Stress ab"
+    nr="5"
+    text="Zumba® macht gute Laune, baut Stress ab und macht deinen Kopf frei. Die eine Stunde gehört ganz Dir! Danach fühlst Du Dich erholt, glücklicher und energiegeladener und kannst mit dem Stress besser umgehen."/>
+</div>
+	<Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du stärkst Dein Immunsystem"
+    nr="6"
+    text="Regelmäßige Zumba® Workouts erhöhen die Antikörper-produktion, die das Immunsystem unterstützen. Damit ist dein Körper besser vor Krankheiten und Infektionen geschützt."/>
+    <Facts 
+    alignItemsClass="align-items--start" 
+    heading="Du empfindest Freude"
+    nr="7"
+    text="Mit Zumba® bleibst du fit und hast Spaß. Du wirst dich auf die Musik und die Bewegungen konzentrieren und die Zeit wird wie im Flug vergehen."/>
+    </Grid>
+    </Wrapper>
+</Section>
+
+<!-- VERSCHIEDENE LEVEL SECTION -->
+<Section
+paddingClass="padding--120"
+backgroundImgClass="color-patch--pink-flipped"
+>
+<Wrapper
+wrapperClass="wrapper"
+>
+<h2 class="p__align--right">Es ist für jeden etwas dabei</h2>
+    <Grid 
+    gridColumnClass="grid-3fr"
+    >
+<VideoCard 
+video={{
+src:'/videos/zumba-fitness-compressed.mp4',
+thumbnail:'/images/zumba-fitness-info.webp'
+}}
+heading="Zumba® Fitness"
+text="Zumba® kombiniert tänzerische Bewegungen mit niedriger und hoher Intensität zu einem Intervalltraining, bei dem du 300 bis 600 Kalorien pro Stunde verbrennst. Das Beste daran: Du fühlst Dich wie auf einer Tanz-Fitness-Party. Danach fühlst Du Dich ausgepowert und energiegeladen zugleich. Gute Laune garantiert!"
+img={{
+	src:'/images/fitness-icon.webp',
+	alt:'Zumba Fitness'
+}}
+/>
+<VideoCard 
+video={{
+src:'/videos/zumba-toning-compressed.mp4',
+thumbnail:'/images/zumba-toning-info.webp'
+}}
+heading="Zumba® Toning"
+text="Das speziell ausgerichtete Ganzkörpertraining kombiniert die gute Laune von Zumba®  Fitness mit leichten Gewichten, den Zumba®   Toning Sticks. Für Dich die besten Übungen zum Muskelaufbau und Gewichtsreduktion! Wer seine Figur formen möchte, ist bei Zumba® Toning genau richtig!"
+img={{
+	src:'/images/toning-icon.webp',
+	alt:'Zumba Toning'
+}}
+/>
+<VideoCard 
+video={{
+src:'/videos/zumba-strong-compressed.mp4',
+thumbnail: '/images/strong-nation-info.webp'
+}}
+heading="Zumba® STRONG Nation™"
+text="STRONG Nation™ ist ein hochintensives Intervalltraining (HIIT) bei dem Du mit Deinem eigenen Köpergewicht trainierst. Das besondere daran: die Musik ist  perfekt auf die Bewegungen abgestimmt und motiviert Dich zusätzlich an deine Grenzen zu gehen - PUSH YOUR LIMIT mit STRONG Nation™.!"
+img={{
+	src:'/images/strong-icon.webp',
+	alt:'STRONG Nation'
+}}
+/>
+
+</Grid>
+</Wrapper>
+</Section>
+
+<!-- SO FUNKTIONIERT ES SECTION -->
+<Section
+paddingClass="padding--120"
+>
+<Wrapper
+wrapperClass="wrapper">
+<h2>Mit Zumba® -Stream trainierst du wann, wo und wie oft du willst</h2>
+    <Grid
+    gridColumnClass="grid-3fr"
+    >
+	<Facts 
+    alignItemsClass="align-items--start" 
+    heading="Testen"
+    nr="1"
+    text="Teste Zumba® -Stream <a href='https://zim.uscreen.io/join' class='link'>7 Tage kostenlos</a>"/>
+	<Facts 
+    alignItemsClass="align-items--start" 
+    heading="Wähle ein Abo"
+    nr="2"
+    text="Entscheide dich für <a href='/preise' class='link'>ein Abo</a> und melde dich an"/>
+	<Facts 
+    alignItemsClass="align-items--start" 
+    heading="Abspielgerät wählen"
+    nr="3"
+    text="Verwende ein <a href='/tv-streaming' class='link'>Gerät deiner Wahl</a> und beginne dein Training"/>
+    </Grid>
+</Wrapper>
+</Section>
+
+
+<!-- TESTIMONIALS -->
+<Section
+heading="Was andere über uns denken"
+paddingClass="padding--60"
+>
+	<Wrapper
+	wrapperClass="wrapper--wider">
+	<Grid 
+	gridColumnClass="grid-8fr"
+	gridGapClass="grid__gap--smaller">
+	<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Wooooow ich habe noch nie soviel Leidenschaft und Power erlebt wie bei diesem Team. 🔥 Hier kommt man mit Spaß an seine Grenzen. Wirklich jeder ob Sport Einsteiger oder Profie kommt ihr auf seine Kosten und hat viel Spaß dabei. Hier kann man vom Alltag abschalten und alles raus lassen was in einem steckt"
+		subtext="Noreen H."
+		/>
+	</div>
+	<div class="grid__mosaic">		
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Super engagierte Trainer, sehr abwechslungsreiches Programm, da aus einem sehr großen Trainerpool geschöpft werden kann, sodass für jeden was dabei ist. 💃😍💃 Eure Livestreams sind ein tolles Angebot, das es Zumba-Fans ermöglicht, Zumba auch von zu Hause aus in den Alltag zu integrieren. Vielen Dank dafür und macht weiter so 🤗"
+		subtext="Bianca S."
+		/>
+	</div>
+<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Ein großes Lob an euer gesamtes Team. Man merkt das die Zumba® Instruktoren mit voller Motivation und Freude beim Training sind. Das Konzept ist auch super. Da es immer mehrere Kurse an einem Tag gibt kann ich mir immer die beste Zeit für mich raussuchen. Macht weiter so!!! 🥰"
+		subtext="Isabella R."
+		/>
+	</div>
+	<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Danke für den tollen , lustigen Wohnzimmerkurs gestern. Es hat richtig Spass gemacht mal wieder zu tanzen! Und Lisa Maria versprüht gute Laune und Energie 💜🌞 ich war zum 1. Mal dabei, aber komme jetzt bestimmt öfter dazu 😊"
+		subtext="Miriam de C."
+		/>
+	</div>
+	<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Soooo toll was hier für Arbeit geleistet wird, tolles Team, tolle Trainer 👍🏽👍🏽👍🏽👍🏽❤️❤️❤️"
+		subtext="Martina B."
+		/>
+	</div>
+	<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Zumba® macht einfach gute Laune: tolle Musik, einfache, immer wiederkehrende Schritte, man schwitzt und steigert die Kondition. Ganz nebenbei trainiert man noch „wasweißichwelche“ Muskeln. Ganz verschiedene, sehr motivierte TrainerInnen bringen ihren jeweils eigenen Stil ein. Man kann sich flexibel aussuchen, wann man in welchen Kurs gehen möchte und fühlt sich immer willkommen. Weiter so! Euch kann man wirklich nur weiterempfehlen! 👍"
+		subtext="Ute W."
+		/>
+	</div>
+	<div class="grid__mosaic">
+		<Card 
+		img={{
+			src:'/images/quotation-mark.svg',
+			alt:''
+		}}
+		text="Alle Trainer sind super motivierend und man kann klasse folgen, denn sie zeigen mit Hand und Finger genau wie oft wo hin 🙂 so viel gute Laune tanken und dabei immer fitter werden, das sind echt Helden in dieser Zeit!"
+		subtext="San T."
+		/>
+	</div>
+	</Grid>
+</Wrapper>
+</Section>
+
+<Section
+backgroundImgClass="color-patch--big"
+paddingClass="padding--120">
+<Wrapper
+wrapperClass="wrapper">
+	<Grid
+	gridColumnClass="grid-2fr">
+	<div>
+		<img src="/images/team.webp" alt="Team von Salsa Dance Studio" width="400"/>
+	</div>
+		<div>
+			<h2 class="p__align--left">Wir lieben Zumba®</h2>
+			<p>Zumba® ist unsere Leidenschaft, Fitness unser Hobby!</p>
+			<p>Bei uns herrscht familiäre Atmosphäre - jeder ist willkommen! Hier muss keiner perfekt sein, denn wir sind es auch nicht. Uns ist wichtig, dass es Dir gut geht und du dich gut in deinem Körper fühlst. Sei du selbst und mach Kurzurlaub mit uns.</p>
+			<Button 
+		btn={{
+			href:'/ueber',
+			text:'Mehr über uns'
+		}}
+		/>
+		</div>
+	</Grid>
+</Wrapper>
+</Section>
+</MainLayout>

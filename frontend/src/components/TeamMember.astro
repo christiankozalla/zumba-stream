@@ -1,0 +1,154 @@
+---
+const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", name, type, instaProfile } = Astro.props;
+---
+
+<div>
+    <div class={`
+        member__img--round
+        ${backgroundImgClass}
+        `}>
+    </div>
+    <div class="member__icon-container">
+        {iconFitness &&
+        (<img src={ iconFitness.src } alt={ iconFitness.alt } class="member__fitness-icon"/>)
+        }
+
+        {iconToning &&
+            (<img src={ iconToning.src } alt={ iconToning.alt } class="member__toning-icon"/>)
+            }
+
+        {iconStrong &&
+            (<img src={ iconStrong.src } alt={ iconStrong.alt } class="member__toning-icon"/>)
+            }
+    </div>
+    <h5 class="align--center">{ name }</h5>
+    <p class="align--center  p--no-margin">{ type }</p>
+        <div class="member__insta">
+            <a href={ instaProfile }><i class="icofont-instagram  icofont-2x"></i></a>
+        </div>
+</div>
+
+<style>
+
+    .member__img--round {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 1em;
+        display: flex;
+        margin: 1em auto;
+    }
+
+    /* IMAGES OF TEAM MEMBERS */
+
+    .team-member-1 {
+        background-image: url(/images/svetlana.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .team-member-2 {
+        background-image: url(/images/lisa-maria.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-3 {
+        background-image: url(/images/maria-laura.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-4 {
+        background-image: url(/images/lisa.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-5 {
+        background-image: url(/images/lydia.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-6 {
+        background-image: url(/images/nadine.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-7 {
+        background-image: url(/images/kathrin.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-8 {
+        background-image: url(/images/liejing.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-9 {
+        background-image: url(/images/alicia.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-10 {
+        background-image: url(/images/lena.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-11 {
+        background-image: url(/images/victoria.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-12 {
+        background-image: url(/images/kristina.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .member__icon-container {
+        display: flex;
+        justify-content: center;
+        margin-top: -2.8em;
+        margin-bottom: 0.6em;
+    }
+
+    .member__fitness-icon,
+    .member__toning-icon,
+    .member__strong-icon {
+        max-width: 40px;
+    }
+
+    .member__insta {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .icofont-instagram {
+        color: var(--first-color);
+    }
+
+    .icofont-instagram:hover {
+        color: var(--second-color);
+    }
+</style>

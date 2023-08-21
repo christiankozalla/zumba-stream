@@ -1,0 +1,99 @@
+---
+// import components and layouts
+import MainLayout from '../../layouts/MainLayout.astro';
+import HeroShot from '../../components/HeroShot.astro';
+
+//import sanity
+import { useSanityClient } from '@sanity/astro';
+import { urlForImage } from '../../lib/urlForImage';
+import PortableText from '../../components/PortableText.astro';
+import Wrapper from '../../components/Wrapper.astro';
+
+
+
+export async function getStaticPaths() {
+  const posts = await useSanityClient().fetch(`*[_type == "post"]`);
+  return posts
+    .map((post) => {
+      return post.slug?.current
+        ? {
+            params: {
+              slug: post.slug?.current
+            },
+            props: { ...post }
+          }
+        : null;
+    })
+    .filter(Boolean);
+}
+
+const { title, description, body, mainImage, author, publishedAt, readingTime } = Astro.props;
+
+---
+<MainLayout
+title={ title }
+description={ description }
+opengraph={{
+	title: title,
+	url: '',
+	image: mainImage,
+	type:'content',
+	description: description,
+	locale:'de'
+}}
+>
+
+<HeroShot 
+facebookShareLink="https://www.facebook.com/sharer/sharer.php?u=${Astro.url.toString()}"
+linkedinShareLink="https://www.linkedin.com/shareArticle?mini=true&url=${Astro.url.toString()}"
+author={ author }
+date={new Date(publishedAt).toLocaleDateString('de-DE')}
+readingTime={ readingTime }
+heading={ title }
+subheading={ description }
+/>
+
+
+  <Wrapper
+  wrapperClass="wrapper--smaller"
+  > 
+  <div class="featured-img__container">
+    {
+      mainImage && (
+        <img class="post__featured-img" src={urlForImage(mainImage).url()} />
+      )
+    } 
+    </div>
+    <PortableText portableText={body} />
+  </Wrapper>
+
+</MainLayout>
+
+<style is:inline>
+
+.post__title {
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.post__featured-img {
+  margin: 2em auto 0 auto;
+}
+
+h2 {
+  margin: 2.2em 0 1em 0;
+}
+
+h3 {
+  margin-bottom: 0.2em;
+}
+
+p {
+  margin: 1em 0 3em 0;
+}
+
+.icofont-facebook,
+.icofont-linkedin {
+  color: var(--first-color);
+}
+</style>

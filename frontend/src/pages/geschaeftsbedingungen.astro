@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Lists from "../components/Lists.astro";
+---
+
+<MainLayout
+title="Allgemeine Geschäftsbedingungen"
+description="">
+<HeroShot
+heading="Allgmeine Geschäftsbedingungen"
+subheading="Salsa Dance Studio Mainz"
+/>
+<Section
+paddingClass="padding--120"
+heading="Allgemeine Geschäftsbedingungen"
+>
+<Wrapper
+wrapperClass="wrapper--smaller"
+>
+<Lists 
+listItems={[
+    "Diese Website (die Site) und/oder die Dienste, einschließlich aller dazugehörigen mobilen Anwendungen (zusammen: die Dienste) und aller Angebote und Verkäufe von Produkten (Produkten) über die Site, steht im Eigentum von [bitte Firmennamen und Rechtsform des Shop-Betreibers eingeben] und wird von dieser betrieben (nachstehend auch: wir, uns und unser(e)). Diese Geschäftsbedingungen (Bedingungen) legen die Bedingungen fest, unter denen Besucher oder Nutzer (zusammen: Nutzer oder Sie) die Site und/oder die Dienste besuchen bzw. nutzen und Produkte kaufen zu können.",
+    "Mit dem Zugriff auf die bzw. der Nutzung der Dienste erklären Sie sich mit den Bedingungen einverstanden und stimmen ihnen verbindlich zu. Wenn Sie nicht mit allen Bedingungen einverstanden sind, dürfen Sie nicht auf die Site zugreifen bzw. die Dienste nutzen. Lesen Sie diese Bedingungen bitte sorgfältig durch, bevor Sie auf unsere Site zugreifen bzw. die Dienste nutzen oder Produkte kaufen. In diesen Bedingungen erfahren Sie, wer wir sind, wie wir Produkte an Sie verkaufen, wie Sie den Kaufvertrag widerrufen können und was Sie bei Problemen tun können.",
+    "Sie versichern, dass Sie volljährig sind und über die rechtliche Befugnis, das Recht und die Freiheit verfügen, eine verbindliche Vereinbarung auf der Grundlage dieser Bedingungen einzugehen und die Dienste zu nutzen und Produkte zu kaufen. Wenn du minderjährig bist, benötigst du die Genehmigung deiner Eltern oder eines gesetzlichen Vertreters, um die Dienste zu nutzen oder Produkte zu kaufen."
+]}
+/>
+
+<h3>Kauf von Produkten</h3>
+<Lists 
+listItems={[
+    "Der Kauf von Produkten unterliegt den zum jeweiligen Zeitpunkt geltenden Bedingungen.",
+    "Wenn Sie ein Produkt kaufen: (i) sind Sie dafür verantwortlich, die Artikelbeschreibung vollständig zu lesen, bevor Sie es verbindlich kaufen, und (ii) der Abschluss einer Bestellung auf der Site (durch Abschluss eines Bezahlvorgangs über den Button;Kostenpflichtig bestellen oder einen ähnlichen Button) kann einen rechtsverbindlichen Vertrag für den Kauf des entsprechenden Produktes darstellen, es sei denn die vorliegenden Bedingungen sehen etwas anderes vor.",
+    "Sie können mit einem Klick auf den entsprechenden Button, Produkte aus unserer Produktauswahl aussuchen und in den Warenkorb legen. Unsere Preise sind auf der Site aufgeführt. Wir behalten uns das Recht vor, unsere Preise jederzeit zu ändern und unbeabsichtigt auftretende Preisfehler zu korrigieren. Diese änderungen haben keine Auswirkungen auf den Preis für Produkte, die Sie schon davor gekauft haben. Beim Bezahlen wird Ihnen eine übersicht über alle Produkte angezeigt, die Sie in den Warenkorb gelegt haben. Die übersicht umfasst die wesentlichen Eigenschaften jedes Produkts sowie den Gesamtpreis für alle Produkte, die geltenden Umsatzsteuer (USt.)/Mehrwertsteuer (MwSt.) und ggf. die Versandkosten. Auf der Bezahlseite haben Sie auch die Möglichkeit, die Produkte und Mengen zu überprüfen und, falls nötig, zu ändern, zu entfernen oder zu korrigieren. Sie können auch über die Bearbeitungsfunktion noch etwaige Eingabefehler erkennen und korrigieren, bevor Sie Ihre endgültige verbindliche Bestellung aufgeben. Alle angegebenen Lieferfristen gelten ab Erhalt Ihrer Zahlung des Kaufpreises. Wenn Sie auf den Button 'Kostenpflichtig bestellen' klicken, erteilen Sie einen verbindlichen Auftrag zum Kauf der aufgeführten Produkte zum angegebenen Preis und zu den angegebenen Versandkosten. Zum Abschluss des Bestellvorgangs über den Button 'Kostenpflichtig bestellen' müssen Sie vorher diese Bedingungen als rechtsverbindlich für Ihren Auftrag anerkennen, indem Sie das entsprechende Kästchen anklicken.",
+    "Wir senden Ihnen dann per E-Mail eine Empfangsbestätigung für Ihren Auftrag, in der Ihre Bestellung noch einmal aufgeführt wird und die Sie dann über die entsprechende Funktion ausdrucken oder speichern können. Bitte beachten Sie, dass es sich dabei um eine automatische Benachrichtigung handelt, die nur belegt, dass wir Ihren Auftrag erhalten haben. Sie zeigt nicht an, dass wir Ihren Auftrag angenommen haben.",
+    "Die rechtsverbindliche Vereinbarung über den Kauf der Produkte ist erst geschlossen, wenn wir Ihnen per E-Mail eine Annahmeerklärung übermitteln oder die Produkte an Sie versenden. Wir behalten uns das Recht vor, Ihren Auftrag nicht anzunehmen. Dies gilt nicht in Fällen, in denen wir eine Zahlungsmethode anbieten – und Sie diese Zahlungsmethode für Ihren Auftrag wählen –, bei der sofort bei übermittlung Ihres Auftrags ein Zahlungsvorgang eingeleitet wird (z. B. elektronische überweisung oder Echtzeitüberweisung über PayPal, Giropay, Paydirekt). In diesem Fall gilt die rechtsverbindliche Vereinbarung als geschlossen, wenn Sie den Bestellvorgang, wie oben beschrieben, über den Button 'Kostenpflichtig bestellen' eingeleitet haben.",
+    "Der Kaufvertrag kann in [deutscher] Sprache geschlossen werden. Nach Vertragsabschluss werden die Vertragsbedingungen bei uns aufbewahrt, Sie haben dann keinen Zugriff mehr darauf."
+]}
+/>
+
+<h3>Widerrufsrecht</h3>
+
+<p>Sie können diesen Vertrag innerhalb von 14 Tagen ohne Angabe von Gründen widerrufen.</p>
+
+<p>Die Widerrufsfrist erlischt 14 Tage nach Vertragsschluss.</p>
+
+<p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns </p>
+
+<p>[Bitte Namen und Anschrift des Stores angeben], </p>
+
+<p>Telefonnummer: [Bitte Telefonnummer angeben], </p>
+
+<p>Faxnummer: [Bitte Faxnummer angeben], </p>
+
+<p>E-Mail-Adresse: [Bitte E-Mail-Adresse angeben] </p>
+
+
+<p>über Ihre Entscheidung diesen Vertrag zu widerrufen mittels einer unmissverständlichen Erklärung informieren (z. B. einem Schreiben per Post, Fax oder E-Mail). Sie können (müssen aber nicht) das beigefügte Widerrufsformular dafür verwenden.</p>
+
+
+<h4>Folgen des Widerrufs</h4>
+
+
+<p>Wenn Sie diesen Vertrag widerrufen, erstatten wir Ihnen – ohne unnötige Verzögerung, in jedem Fall jedoch höchstens 14 Tage nach Eingang der Benachrichtigung über Ihren Widerruf – alle bereits von Ihnen erhaltenen Zahlungen zurück, einschließlich der Lieferkosten (ausgenommen der zusätzlich entstandenen Kosten für eine von Ihnen gewünschte und von der von uns angebotenen günstigsten Standardlieferung abweichende Zustellungsart). Wir werden eine solche Rückerstattung mit dem gleichen Zahlungsmittel vornehmen, das Sie für die ursprüngliche Transaktion verwendet haben, es sei denn, Sie haben ausdrücklich etwas anderes genehmigt; in jedem Fall entstehen Ihnen durch eine solche Rückerstattung keine Gebühren. </p>
+
+
+<h4>Ausnahmen vom Widerrufsrecht</h4>
+
+
+<p>Das Widerrufsrecht erlischt bei Verträgen über die Lieferung von digitalen Inhalten (einschließlich Streaming, Downloads etc.), die nicht auf einem physischen Datenträger (z. B. CD oder DVD) geliefert werden, wenn Sie ausdrücklich zugestimmt haben, dass wir mit der Ausführung des Vertrages vor Ablauf der Widerrufsfrist beginnen, und Sie bestätigt haben, dass Ihnen bekannt ist, dass Sie durch diese Zustimmung Ihr Widerrufsrecht verlieren, sobald die Ausführung des Vertrages begonnen hat.</p>
+</Wrapper>
+</Section>
+</MainLayout>

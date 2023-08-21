@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #VARIABLES */
+
+:root {
+    --first-color: #f24cae;
+    --second-color: #05b9c8;
+    --third-color: #af66ff;
+    --fourth-color: #abf5d9;
+    --black-color: #090C08;
+    --border-radius: 0.8em;
+
+    --ff-heading: 'Sriracha', Arial, Helvetica, sans-serif;
+    --ff-body: 'Nunito Sans', Arial, Helvetica, sans-serif;
+
+    --fs-xl: 4rem;
+    --fs-700: 3rem;
+    --fs-600: 2.4rem;
+    --fs-500: 2rem;
+    --fs-400: 1.8rem;
+    --fs-300: 1.2rem;
+    --fs-xs: 1rem;
+}
+
+/*  #LAYOUT*/
+
+body {
+    font-family: var(--ff-body);
+    color: var(--black-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    color: var(--first-color);
+}
+
+.main-layout__grid {
+    display: grid;
+    min-height: 100dvh;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.wrapper--wider {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 60em) {
+    .grid-3fr {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4em;
+    }
+}
+
+.grid__mosaic:nth-child(1) {
+    grid-column: span 4;
+}
+.grid__mosaic:nth-child(2) {
+    grid-column: span 4;
+}
+.grid__mosaic:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.grid__mosaic:nth-child(4) {
+    grid-column: span 4;
+    
+}
+.grid__mosaic:nth-child(5) {
+    grid-column: span 2;
+}
+.grid__mosaic:nth-child(6) {
+    grid-column: span 4;
+}
+.grid__mosaic:nth-child(7) {
+    grid-column: span 2;
+}
+.margin-negative {
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 80em) {
+    .margin-negative {
+        margin-top: -120px;
+    }
+}
+
+/* #FONTS FONT IDEAS KALAM BELANOSIMA SANSITA SHADOWS INTO LIGHT TWO SIGNIKA NEGATIVE COMFORTAA */
+
+@font-face {
+    font-family: 'Sriracha';
+    src: url("/fonts/Sriracha-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url("/fonts/NunitoSans_10pt-Regular.ttf");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--fs-xl);
+}
+
+h2 {
+    font-size: var(--fs-600);
+    margin-bottom: 1em;
+    max-width: 80%;
+}
+
+h3 {
+    font-size: var(--fs-600);
+    margin-top: 1.4em;
+
+}
+
+h4 {
+    font-size: var(--fs-500);
+    margin-top: 1.2em;
+}
+
+h5 {
+    font-size: var(--fs-400);
+}
+
+h6 {
+    font-size: var(--fs-300);
+    margin-bottom: 0.4em;
+}
+
+p {
+    font-size: var(--fs-300);
+    margin: 1rem 0;
+}
+
+@media only screen and (min-width: 40em) {
+    h2 {
+        font-size: var(--fs-700);
+    }
+}
+
+/* #IMAGES #VIDEOS */
+
+img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* #GENERAL CSS */
+
+.text--white {
+    color: #fff;
+}
+
+.margin--top {
+    margin-top: 1.6em;
+}
+
+.p--margin {
+    margin: 1em 0 3em 0;
+}
+
+.p__align--center {
+    text-align: center;
+}
+
+.p__align--right {
+    text-align: right;
+}
+
+.p__align--left {
+    text-align: left;
+}
+
+.p--no-margin {
+    margin: 0;
+}
+
+.col--span-2 {
+    grid-column: 1 / 3;
+}
+
+.col--span-3 {
+    grid-column: 1 / 4;
+}
+
+.row--span-2 {
+    grid-row: 1 / 4;
+}
+
+.col--3 {
+    grid-column-start: 3;
+}
+
+.row--2 {
+    grid-row-start: 2;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex--align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* #LINK */
+
+.link {
+    display: inline-block;
+    position: relative;
+    color: inherit;
+    z-index: 1;
+    font-weight: bold;
+    padding: 0 0.1em;
+  }
+
+  .link--small {
+    font-size: var(--fs-xs);
+  }
+
+  .link--big {
+    font-size: var(--fs-300);
+  }
+
+  .link--normal {
+    font-weight: 300;
+  }
+
+    .link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0.2em;
+        height: 0.46em;
+        width: 100%;
+        border-radius: 2px;
+        background: linear-gradient(45deg, var(--first-color), var(--third-color), var(--second-color), var(--fourth-color));
+        z-index: -1;
+        transition: height .30s cubic-bezier(0.6,0,.4,1);
+      }
+      
+      .link:hover::after {
+        height: 86%;
+      }
+
+      .link:hover {
+        color: #fff;
+        transition-delay: 0.2s;
+        transition-timing-function: linear;
+      }

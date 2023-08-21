@@ -1,0 +1,38 @@
+---
+const { btn, alignClass = "" } = Astro.props;
+---
+<div class={`
+btn__container
+${alignClass}
+`}>
+{ btn &&
+(<a class="btn" href={ btn.href }>{ btn.text }</a>)
+}
+</div>
+<style>
+    .btn__container {
+    margin: 4em 0;
+    display: flex;
+    }
+
+    .btn {
+        border: 1px solid var(--first-color);
+        background-color: var(--first-color);
+        color: #fff;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background-color: #fff;
+        color: var(--first-color);
+    }
+
+    .btn--center {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+</style>

@@ -1,0 +1,27 @@
+---
+const { nr, heading, text } = Astro.props;
+---
+
+<div class="steps__container">
+    <div class="steps__circle">{ nr }</div>
+    <h5>{ heading }</h5>
+    <p>{ text }</p>
+</div>
+
+<style>
+.steps__container {
+    text-align: center;
+}
+
+.steps__circle {
+    border-radius: 50%;
+    max-width: 30px;
+    max-height: 30px;
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+    font-family: var(--ff-heading);
+    font-weight: bold;
+    margin: 0 auto 1em auto;
+}
+
+</style>

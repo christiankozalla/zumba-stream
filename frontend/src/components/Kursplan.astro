@@ -1,0 +1,154 @@
+---
+
+---
+
+<div class="plan__grid">
+    <h6 class="plan__heading  plan__grid-row--first">Montag</h6>
+        <div class="plan__grid-row--fourth">
+            <div class="plan__card">
+                <div class="plan__details">
+                    <img src="/images/clock-7.svg" width="24"/>
+                    <p class="plan__text">19:00</p>
+                </div>
+                <p class="plan__text"><strong>Zumba® Fitness</strong></p>
+                <p class="plan__text">mit Lena</p>
+            </div>
+        </div>
+   
+    <h6 class="plan__heading  plan__grid-row--first">Dienstag</h6>
+    <div class="plan__grid-row--third  plan__grid-column--second">
+        <div class="plan__card">
+            <div class="plan__details">
+                <img src="/images/clock-6.svg" width="24"/>
+                <p class="plan__text">18:00</p>
+            </div>
+            <p class="plan__text"><strong>Zumba® Fitness</strong></p>
+            <p class="plan__text">mit Alicia/Lydia</p>
+        </div>
+    </div>
+
+    <h6 class="plan__heading  plan__grid-row--first">Mittwoch</h6>
+    <div class="plan__grid-row--fourth  plan__grid-column--third">
+        <div class="plan__card">
+            <div class="plan__details">
+                <img src="/images/clock-7.svg" width="24"/>
+                <p class="plan__text">19:00</p>
+            </div>
+            <p class="plan__text"><strong>Zumba® Fitness</strong></p>
+            <p class="plan__text">mit Lena/Alicia</p>
+        </div>
+    </div>
+
+    <h6 class="plan__heading  plan__grid-row--first">Donnerstag</h6>
+    <div class="plan__grid-row--third  plan__grid-column--fourth">
+            <div class="plan__card">
+                <div class="plan__details">
+                    <img src="/images/clock-6.svg" width="24"/>
+                    <p class="plan__text">18:00</p>
+                </div>
+                <p class="plan__text"><strong>Strong & Toning</strong></p>
+                <p class="plan__text">mit Kathrin</p>
+            </div>
+    </div>
+   
+    <h6 class="plan__heading  plan__grid-row--first">Freitag</h6>
+    <div class="plan__grid-row--second  plan__grid-column--fifth">
+        <div class="plan__card">
+            <div class="plan__details">
+                <img src="/images/clock-11.svg" width="24"/>
+                <p class="plan__text">11:00</p>
+            </div>
+            <p class="plan__text"><strong>Zumba® Fitness</strong></p>
+            <p class="plan__text">mit Nadine/Victoria</p>
+        </div>
+    </div>
+   
+        <h6 class="plan__heading  plan__grid-row--first">Samstag</h6>
+        <div class="plan__grid-row--second  plan__grid-column--six">
+        <div class="plan__card">
+            <div class="plan__details">
+                <img src="/images/clock-11.svg" width="24"/>
+                <p class="plan__text">11:00</p>
+            </div>
+            <p class="plan__text"><strong>Zumba® Fitness</strong></p>
+            <p class="plan__text">mit Anne-Sophie</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .plan__grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto repeat(3,1fr);
+        gap: 1.2rem;
+        border: 1px solid #fff;
+        border-radius: var(--border-radius);
+        background-image: linear-gradient(45deg, var(--first-color), var(--third-color), var(--second-color));
+        padding: 1rem 2rem;
+        align-items: center;
+    }
+
+    .plan__grid-row--first {
+        grid-row-start: 1;
+    }
+
+    .plan__grid-row--second {
+        grid-row-start: 2;
+    }
+
+    .plan__grid-row--third {
+        grid-row-start: 3;
+    }
+
+    .plan__grid-row--fourth {
+        grid-row-start: 4;
+    }
+
+    .plan__grid-column--second {
+        grid-column-start: 2;
+    }
+
+    .plan__grid-column--fourth {
+        grid-column-start: 4;
+    }
+
+    .plan__grid-column--fifth {
+        grid-column-start: 5;
+    }
+
+    .plan__grid-column--six {
+        grid-column-start: 6;
+    }
+
+    .plan__grid-column--third {
+        grid-column-start: -5;
+    }
+
+    .plan__card {
+        border-radius: var(--border-radius);
+        padding: 1em;
+        background-color: #fff;
+    }
+
+    .plan__details {
+        display: flex;
+        gap: 0.6em;
+        justify-content: flex-end;
+        margin-bottom: 0.2em;
+        font-weight: bold;
+    }
+
+    .plan__text {
+        margin: 0;
+        font-size: var(--fs-xs);
+        text-align: right;
+    }
+
+    .plan__heading {
+        text-align: center;
+        padding: 1em;
+        margin-bottom: 1em;      
+        color: #fff;
+    }
+</style>

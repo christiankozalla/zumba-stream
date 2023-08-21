@@ -1,0 +1,18 @@
+{
+  "name": "zumba-stream",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@sanity/astro": "^1.0.1",
+    "@sanity/image-url": "^1.0.2",
+    "astro": "^2.9.3",
+    "astro-portabletext": "^0.9.1"
+  }
+}

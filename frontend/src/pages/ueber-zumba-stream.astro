@@ -1,0 +1,234 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Grid from "../components/Grid.astro";
+import About from "../components/About.astro";
+import Video from "../components/Video.astro";
+import TeamMember from "../components/TeamMember.astro";
+import BlogImage from "../components/BlogImage.astro";
+---
+
+<MainLayout>
+    <HeroShot
+		img={{
+			src:'/images/team.webp',
+			alt:'',
+			width:'500'
+		}}
+		heading="Mit Zumba® -Stream erreichst du dein Wunschgewicht ohne Stress"
+		subheading="Zumba® ist unsere Leidenschaft, Fitness unser Hobby!"
+		btn={{
+			href:'',
+			text:'7 Tage kostenlos testen'
+		}}
+        backgroundImgClass="teaser__background-img2"
+	/>
+    <Section 
+    >
+    <Wrapper
+    wrapperClass="wrapper--smaller">
+        <p>Jede unserer 8 Zumba® Instruktoren bringt ihren eigenen Stil und Musikgeschmack mit ein, da ist für jeden das richtige dabei.</p>
+        <p>Mit Zumba® -Stream bieten wir ein riesen Angebot mit mehr als 150 Stunden Zumba® Online Kursen, die Du immer kostenlos testen kannst. Suche Dir deinen Zumba® Online Kurs und starte einfach.</p>
+        <p>Der Spaß an Bewegung und die gute Laune beim Tanzen wird bei uns großgeschrieben. Jede Zumba® Instruktorin bringt ihre Idividualität und ihre Persönlichkeit in ihren Online Zumba® Kurs...</p>
+    </Wrapper>
+    <Wrapper
+    wrapperClass="wrapper">
+        <About
+        />
+    </Wrapper>
+</Section>
+
+<Section
+heading="Einen Marathon laufen ohne Lauftraining"
+paddingClass="padding--120"
+>
+<Wrapper
+wrapperClass="wrapper--smaller">
+<p>Ich habe als Sportlehrerin gearbeitet. Obwohl ich kein großer Sportfan bin. Aber ich liebe es meine Mitmenschen in Bewegung zu bringen.</p>
+<p>Ob ich Sport gemacht habe?</p> 
+<p>Klar.</p> 
+<p>Ich wollte fit bleiben und nicht zunehmen. Aber so richtig Spaß hatte ich nicht.</p>
+<p>Das einzige, was mich begeistert hat, ist das Tanzen. Aber ohne Tanzpartner?</p>
+<p>2011 hat mich eine Freundin zu Zumba® mitgenommen und ich habe es geliebt. Das hatte ich mein Leben lang gesucht: Die Verbindung zwischen Tanzen und Fitness auf mega-gute-Laune Latin Music. Zumba® ist wie eher eine Party als eine Trainingseinheit. Die Stunde vergeht wie im Flug, und egal, wie der Tag gewesen ist - man hat danach gute Laune!</p>
+<p>Zumba® hat mich inspiriert und glücklich gemacht, dass ich im Jahr 2013 selbst Instructor geworden bin. Ich wollte einfach anderen dieses Glücksgefühl weitergeben.</p>
+<p>Durch Zumba® wurde ich so fit wie noch nie! Komplett ohne Fitnessstudio und andere Sporteinheiten. Zumba® gibt mir einfach alles, was ich körperlich (und seelisch) brauche!</p>
+<p>Ich bin sogar, ohne ein einziges Mal Joggen zu gehen, einen Marathon in 4 Stunden 29 Minuten gelaufen! 3x Zumba® pro Woche hat gereicht!</p>
+<Grid 
+gridColumnClass="grid-2fr"
+>
+<BlogImage 
+img={{
+    src:'/images/marathon.webp',
+    alt:'Marathon Medaille'
+}}
+/>
+<BlogImage 
+img={{
+    src:'/images/marathon-ziel.webp',
+    alt:'Kristina läuft ins Ziel ein'
+}}
+/>
+</Grid>
+<p>Die größte Herausforderung für mich war die Zeit nach meiner Schwangerschaft. Ich hatte, trotz Zumba® bis in den 7. Monat, 22 Kilo zugenommen. Ich habe gezweifelt, ob ich mein Wohlfühlgewicht erreiche würde.</p>
+<Grid 
+gridColumnClass="grid-2fr"
+>
+<BlogImage 
+img={{
+    src:'/images/2020.webp',
+    alt:'Kristina in 2020'
+}}
+/>
+<BlogImage 
+img={{
+    src:'/images/2022.webp',
+    alt:'Kristina in 2022'
+}}
+/>
+</Grid>
+</Wrapper>
+</Section>
+
+
+<!-- TEAM MEMBERS -->
+<Section
+paddingClass="padding--120"
+heading="Unser Team">
+    <Wrapper 
+    wrapperClass="wrapper"
+    >
+    <Grid 
+    gridColumnClass="grid-4fr">
+<TeamMember 
+backgroundImgClass="team-member-1"
+name="Svetlana"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+iconStrong={{
+    src:'/images/strong-icon.webp',
+    alt:'Zumba Strong Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-2"
+name="Lisa Maria"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-3"
+name="Maria Laura"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+iconStrong={{
+    src:'/images/strong-icon.webp',
+    alt:'Zumba Strong Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-4"
+name="Lisa"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-5"
+name="Lydia"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-6"
+name="Nadine"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-7"
+name="Kathrin"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-8"
+name="Liejing"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-9"
+name="Alicia"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-10"
+name="Lena"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-11"
+name="Victoria"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-12"
+name="Kristina"
+type="Online"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba Fitness Icon'
+}}
+/>
+</Grid>
+</Wrapper>
+</Section>
+</MainLayout>

@@ -1,0 +1,89 @@
+---
+const { gridColumnClass, gridGapClass = "", gridAreaClass = "", gridMarginClass = "" } = Astro.props;
+---
+
+<div class={`
+grid
+${gridColumnClass}
+${gridGapClass}
+${gridAreaClass}
+${gridMarginClass}
+`}>
+    <slot/>
+</div>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .grid-1fr,
+    .grid-2fr,
+    .grid-3fr,
+    .grid-4fr {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .grid__gap {
+        gap: 3.8em;
+    }
+
+    .grid__gap--smaller {
+        gap: 1.2em;
+    }
+
+    .grid__margin-bottom--120 {
+        margin-bottom: 120px;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .grid-2fr {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-2fr-arrow--reverse {
+            grid-template-columns: auto 1fr;
+        }
+
+        .row--span-2 {
+            grid-row: span 2;
+        }
+    }
+
+    @media only screen and (min-width: 60em) {
+        .grid-3fr {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 80em) {
+        .grid-2fr--arrow {
+            grid-template-columns: 1fr auto;
+        }
+
+        .grid-4fr {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-4fr--arrow {
+            grid-template-columns: auto repeat(3,1fr);
+        }
+
+        .grid-6fr {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .grid-8fr {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    .grid__text {
+        list-style: none;
+    }
+
+    .grid__p {
+        padding: 4em 0;
+    }
+</style>

@@ -1,0 +1,66 @@
+---
+
+---
+
+<div class="about__grid">
+    <div>
+        <div class="about__grid--flex">
+            <div>
+                <img src="/images/arrow-color-gradient.svg" class="about__grid-arrow--transformed"/>
+            </div>
+            <div>
+                <h6>Kristina Huber</h6>
+                <p class="p--no-margin">Gründerin & Trainerin</p>
+            </div>
+        </div>
+        <img src="/images/kristina.webp" class="about__img"/>   
+    </div>
+    <div>
+        
+        <img src="/images/daniel.webp" class="about__img"/>   
+        <div class="about__grid--flex">
+            <div>
+                <img src="/images/arrow-color-gradient.svg" class="about__grid-arrow"/>
+            </div>
+            <div class="about__person">
+                <h6>Daniel Huber</h6>
+                <p class="p--no-margin">Gründer & Geschäftführer</p>
+            </div>
+        </div>
+    </div>    
+    <div class="about__grid-text">
+        <p>Das Herz vom Salsa Dance Studio - Kristina & Daniel Huber! Kristina ist die energiegeladene Zumba®  - Mama & Haupttrainerin des Studios. Sie hat vor Jahren selbst als Teilnehmerin angefangen und sich direkt in Zumba® verliebt!</p>
+        <p>Mit der Übernahme vom Salsa Dance Studio hat sie sich einen Lebenstraum erfüllt. Im Hintergrund sorgt ihr Ehemann Daniel für Organisatorisches und als Power Team leiten sie das Zumba® Online Studio!</p>
+    </div>
+</div>
+
+<style>
+    .about__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4em;
+        margin: 4em 0;
+    }
+
+    .about__grid--flex {
+        display: flex;
+        gap: 1em;
+    }
+
+    .about__img {
+        width: 80%;
+        margin: 1.2em 0;
+    }
+
+    .about__person {
+        margin-top: 1.6em;
+    }
+   
+    .about__grid-arrow--transformed {
+        transform: rotate(360deg);
+        transform: scaleY(-1)
+        
+    }
+    
+
+</style>
