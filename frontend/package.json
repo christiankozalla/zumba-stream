@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@sanity/astro": "^1.0.1",
+    "@sanity/astro": "^1.1.5",
     "@sanity/image-url": "^1.0.2",
-    "astro": "^2.9.3",
+    "astro": "^2.10.12",
     "astro-portabletext": "^0.9.1"
   }
 }
