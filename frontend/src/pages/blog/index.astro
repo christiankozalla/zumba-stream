@@ -1,5 +1,5 @@
 ---
-import { useSanityClient } from '@sanity/astro';
+import { useSanityClient } from 'astro-sanity';
 import { urlForImage } from '../../lib/urlForImage';
 
 const posts = await useSanityClient().fetch(`*[_type == "post"]{ 

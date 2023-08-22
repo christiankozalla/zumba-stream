@@ -127,12 +127,12 @@ i {
 
 @font-face {
     font-family: 'Sriracha';
-    src: url("/fonts/Sriracha-Regular.ttf");
+    src: url(../../public/fonts/Sriracha-Regular.ttf);
 }
 
 @font-face {
     font-family: 'Nunito Sans';
-    src: url("/fonts/NunitoSans_10pt-Regular.ttf");
+    src: url(../../public/fonts/NunitoSans_10pt-Regular.ttf);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,7 +1,6 @@
-import { useSanityClient } from "@sanity/astro";
-import imageUrlBuilder from "@sanity/image-url";
+import { useSanityClient, createImageBuilder } from 'astro-sanity';
 
-export const imageBuilder = imageUrlBuilder(useSanityClient());
+export const imageBuilder = createImageBuilder(useSanityClient());
 
 export function urlForImage(source) {
   if (source === undefined) return { url: () => "" };
