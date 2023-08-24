@@ -28,7 +28,6 @@ import "../styles/styles.css";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{ title }</title>
     <meta name="description" content={ description }>
-    <link rel="stylesheet" href="styles/styles.css">
 
     <!-- OPENGRAPH -->
 
@@ -57,11 +56,11 @@ import "../styles/styles.css";
 
 <div class="main-layout__grid">
 <body>
-   <Navbar class="header"/>
+   <Navbar />
     <main>
         <slot class="content"/>
     </main>
-    <Footer class="footer" />
+    <Footer />
 </body>
 </html>
 </div>
