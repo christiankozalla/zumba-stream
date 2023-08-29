@@ -1,5 +1,5 @@
 ---
-const { img = "", heading, subheading = "", btn = "", backgroundColorClass = "", backgroundImgClass="", imgClass="", displayClass = "", date = "", readingTime = "", author = "", facebookShareLink = "", linkedinShareLink = "" } = Astro.props;
+const { img = "", heading, subheading = "", btn = "", backgroundColorClass = "", backgroundImgClass="", imgClass="", teaserImgClass = "", displayClass = "", date = "", readingTime = "", author = "", facebookShareLink = "", linkedinShareLink = "" } = Astro.props;
 ---
 
 <div class={`
@@ -12,8 +12,7 @@ ${backgroundColorClass}
         {img && 
         (
         <img class={`
-            teaser__img
-            ${displayClass}
+            ${teaserImgClass}
             `} src={ img.src } alt={ img.alt } width={ img.width }/>
         )
         }
@@ -23,8 +22,12 @@ ${backgroundColorClass}
             <p>{ author }</p>
         <p class="p--no-margin">{ date }</p>
         <h6 class="teaser__time  p--no-margin">{ readingTime }</h6>
+        <div class={`
+        ${displayClass}
+        `}>
         <a href={ facebookShareLink }><i class="icofont-facebook  icofont-lg"></i></a>
         <a href={ linkedinShareLink }><i class="icofont-linkedin  icofont-lg"></i></a>
+        </div>
         </div>
         <h1 class="teaser__heading">{ heading }</h1>
         <p set:html={ subheading } class="teaser__subheading"/>
@@ -40,22 +43,63 @@ ${backgroundColorClass}
     .teaser__container {
     display: grid;
     grid-template-areas: "teaser__container";
-    padding: 1em 0;
     margin-bottom: -7em;
     }
 
-   
+    .teaser__container > * {
+        grid-area: teaser__container;
+    }
 
-    .img--display-none {
+    .teaser__text-container {
+        padding: 2em;
+    }
+
+    .teaser__heading {
+        font-size: var(--fs-600);
+        width: 90%;
+        line-height: 1.2;
+        margin-bottom: 0.3em;
+        padding-top: 1rem;
+    }
+
+    .teaser__subheading {
+        margin-bottom: 3em;
+        font-size: var(--fs-300);
+        line-height: 1.5;
+    }
+
+    .teaser__img-dancer {
+        max-width: 40%;
+        position: absolute;
+        top: 6%;
+        right: -10%;
+    }
+
+    .teaser__img-group {
         display: none;
     }
 
-    .teaser__graphic--dancer {
-        background-image: url(/images/dancer-graphic.webp);
-        z-index: 2;
-        background-position: right;
-        background-size: 70%;
+    .teaser__btn-container {
+        padding-bottom: 2rem;
     }
+
+    .teaser__btn {
+        background-color: var(--first-color);
+        border: 1px solid var(--first-color);
+        color: #fff;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: var(--fs-xs);
+    }
+
+    .teaser__btn:hover {
+            background-color: #fff;
+            color: var(--first-color);
+    }
+
+    /* BACKGROUND IMAGES */
 
     .teaser__background-img {
         background-image: url(/images/color-patch-pink01-flipped.svg);
@@ -74,26 +118,18 @@ ${backgroundColorClass}
     .teaser__background-img2 {
         background-image: url(/images/color-patch-orange.svg);
         background-position: right top;
-        background-size: 50%;
+        background-size: cover;
         background-repeat: no-repeat;
     }
 
     .teaser__background-img3 {
         background-image: url(/images/color-patch.svg);
         background-position: right top;
-        background-size: 90%;
+        background-size: 100%;
         background-repeat: no-repeat;
-        padding: 2em;
     }
 
-
-    .teaser__container > * {
-        grid-area: teaser__container;
-    }
-
-    .teaser__text-container {
-        padding: 2rem;
-    }
+    /* COLORS */
 
     .first-color {
         background-color: var(--first-color);
@@ -107,6 +143,8 @@ ${backgroundColorClass}
         background-image: linear-gradient(190deg, var(--first-color), #9d6edc, #6a92c9, #b2f4d6);
     }
 
+    /* DETAILS FOR BLOG POSTS */
+
     .teaser__details {
         display: flex;
         justify-content: flex-start;
@@ -119,46 +157,34 @@ ${backgroundColorClass}
         color: var(--first-color);
     }
 
-    .teaser__heading {
-        font-size: var(--fs-600);
-        width: 100%;
-        line-height: 1.2;
-        margin-bottom: 0.3em;
-        padding-top: 1rem;
-    }
+    /* OTHER CLASSES */
 
-    .teaser__subheading {
-        margin-bottom: 3em;
-        font-size: var(--fs-300);
-        line-height: 1.5;
+    .hidden {
+        display: none;
     }
-    .teaser__btn-container {
-        padding-bottom: 2rem;
-    }
-
-.teaser__btn {
-    background-color: var(--first-color);
-    border: 1px solid var(--first-color);
-    color: #fff;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: var(--fs-xs);
-}
-
-.teaser__btn:hover {
-        background-color: #fff;
-        color: var(--first-color);
-}
 
 @media only screen and (min-width: 40em) {
-    .teaser__background-img3 {
-        background-size: 60%;
+    .teaser__text-container {
+        padding: 2rem;
+        max-width: 70%;
     }
 
-    .img--display-none {
-        display: flex;
+    .teaser__heading {
+        font-size: var(--fs-700);
+    }
+
+    .teaser__img-dancer {
+        right: 0;
+    }
+
+    .teaser__img-group {
+        display: unset;
+        margin-right: 18rem;
+        margin-top: -5em;
+    }
+
+    .teaser__background-img2 {
+        background-size: 50%;
     }
 
     .teaser__background-img {
@@ -172,24 +198,31 @@ ${backgroundColorClass}
 }
 
 @media only screen and (min-width: 60em) {
-    .teaser__text-container {
-        max-width: 50%;
-        padding: 0 0 0 10rem;
-    }
-    
     .teaser__heading {
         font-size: var(--fs-xl);
-    }
-
-    .teaser__img {
-        margin-right: 18rem;
-        margin-top: -5em;
     }
 
     .teaser__img-container {
         align-items: center;
         display: flex;
         justify-content: flex-end;
+    }
+}
+
+@media only screen and (min-width: 80em) {
+    .teaser__text-container {
+        max-width: 50%;
+        margin-left: 2em;
+    }
+
+    .teaser__img-dancer {
+        position: unset;
+        margin-right: 18rem;
+        margin-top: -5em;
+    }
+
+    .teaser__background-img3 {
+        background-size: 60%;
     }
 }
 </style>

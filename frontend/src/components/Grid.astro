@@ -20,13 +20,20 @@ ${gridMarginClass}
     .grid-1fr,
     .grid-2fr,
     .grid-3fr,
-    .grid-4fr {
+    .grid-4fr,
+    .grid-6fr  {
         grid-template-columns: 1fr;
         gap: 1em;
     }
 
+    .grid-4fr--arrow,
+    .grid-2fr--arrow  {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
     .grid__gap {
-        gap: 3.8em;
+        gap: 1.8em;
     }
 
     .grid__gap--smaller {
@@ -37,6 +44,7 @@ ${gridMarginClass}
         margin-bottom: 120px;
     }
 
+
     @media only screen and (min-width: 40em) {
         .grid-2fr {
             grid-template-columns: repeat(2, 1fr);
@@ -44,6 +52,10 @@ ${gridMarginClass}
 
         .grid-2fr-arrow--reverse {
             grid-template-columns: auto 1fr;
+        }
+       
+        .grid-4fr--arrow {
+            grid-template-columns: repeat(3,1fr);
         }
 
         .row--span-2 {
@@ -55,6 +67,10 @@ ${gridMarginClass}
         .grid-3fr {
             grid-template-columns: repeat(3, 1fr);
         }
+
+        .grid__gap {
+        gap: 3.8em;
+    }
     }
 
     @media only screen and (min-width: 80em) {
@@ -64,10 +80,6 @@ ${gridMarginClass}
 
         .grid-4fr {
             grid-template-columns: repeat(4, 1fr);
-        }
-
-        .grid-4fr--arrow {
-            grid-template-columns: auto repeat(3,1fr);
         }
 
         .grid-6fr {
