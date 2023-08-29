@@ -17,7 +17,7 @@ import VideoCard from "../components/VideoCard.astro";
 title="Homepage Salsa Dance Studio Mainz"
 description="">
 	<HeroShot
-		heading="Stell' Dir vor, Du hast Spaß und verbrennst spielend Kalorien dabei"
+		heading="Stell' Dir vor, Du hast Spaß & verbrennst spielend Kalorien dabei"
 		subheading="Genial, oder? Mach mit bei Zumba® -Stream. Zumba® wann, wo und so oft du willst. Erreiche mit uns dein Wunschgewicht!"
 		btn={{
 			href:'https://zim.uscreen.io/join',
@@ -29,6 +29,8 @@ description="">
 			alt:'Graphic Dancer',
 			width:'360'
 		}}
+		displayClass="hidden"
+		teaserImgClass="teaser__img-dancer"
 	/>
 
 	<!-- FACTS -->
@@ -37,15 +39,17 @@ description="">
 	>
 		<Wrapper
 		wrapperClass="wrapper">
+		<Arrow 
+	img={{
+		src:'/images/arrow-color-gradient.svg',
+		alt:'Arrow pointing down'
+	}}
+	marginClass="margin--bottom"
+	/>
 		<Grid 
 		gridColumnClass="grid-4fr--arrow"
 		gridMarginClass="grid__margin-bottom--120">
-		<Arrow 
-			img={{
-				src:'/images/arrow-color-gradient.svg',
-				alt:'Arrow pointing down'
-			}}
-			/>
+		
 			<Facts 
 				nr="200"
 				text="Stunden Zumba® als Flatrate"
@@ -74,15 +78,16 @@ paddingClass="padding--30"
         <Video
         video={{
             src:'/videos/welcome-mainz-compressed.mp4',
-            width:'800'
         }}
         />
     </Wrapper>
 </Section>
 
+
 <!-- DU HAST KEINEN BOCK -->
 <Section
 paddingClass="padding--120"
+heading="Fit werden und abnehmen mit Zumba® -Stream. Jederzeit und von überall."
 >
 	<Wrapper
 	wrapperClass="wrapper">
@@ -91,7 +96,6 @@ paddingClass="padding--120"
 	gridColumnClass="grid-2fr"
 	>
 		<div class="row--span-2">
-			<h2 class="p__align--left">Fit werden und abnehmen mit Zumba® -Stream. Jederzeit und von überall.</h2>
 			<h3 class="p__align--left">Du hast keinen Bock mehr</h3>
 			<p>Heute Sport! Aber eigentlich hast du keine Lust...</p>
 			<p>Du raffst dich auf. Oh nee, es regnet! Nagut. Du fährst los.</p> 
@@ -100,32 +104,35 @@ paddingClass="padding--120"
 			<p>Dein Kurs fällt heute aus. Einen alternativen Trainingplan gibt es nicht. Du entscheidest dich an den Maschinen zu trainieren. Du wartest. Du zähltst Sets und Reps, achtest auf die Ausführung während ein Muskelprotz neben dir stöhnt.</p> 
 			<p>Die Umkleide ist immer noch voll. Nach 3 Stunden bist du wieder zu Hause und fragst dich: Gibt es nicht was besseres als Gym?</p>
 		</div>
-
+		
 
 		<Grid
-		gridColumnClass="grid-2fr--arrow"
+		gridColumnClass="grid-6fr"
+		gridGapClass="grid__gap"
 		>
-			<Card 
-			img={{
-				src:'/images/exercises.svg',
-				alt:''
-			}}
-			text="Du bist es leid alleine im Fitness Studio an Geräten zu sitzen?"
-			sizeClass="card__container--smaller"
-			/>
-			<Arrow 
-			img={{
-				src:'/images/arrow-color-gradient.svg',
-				alt:'Arrow pointing down'
-			}}
-			alignClass="align--bottom"
-			directionClass="rotate--scale-1"
-			/>
-		</Grid>
-
-		<Grid
-		gridColumnClass="grid-2fr-arrow--reverse">
-			<div></div>
+			<div class="col--3-6">
+				<Card 
+				img={{
+					src:'/images/exercises.svg',
+					alt:''
+				}}
+				text="Du bist es leid alleine im Fitness Studio an Geräten zu sitzen?"
+				sizeClass="card__container--smaller"
+				/>
+			</div>
+			<div class="col--4  row--2">
+				<Arrow 
+				img={{
+					src:'/images/arrow-color-gradient.svg',
+					alt:'Arrow pointing down'
+				}}
+				directionClass="rotate--scale-1"
+				alignClass="align--right"
+				/>
+			</div>
+			<div>
+			</div>
+			<div class="col--span-3">
 			<Card 
 			img={{
 				src:'/images/workout.svg',
@@ -134,11 +141,18 @@ paddingClass="padding--120"
 			text="Du hast keine Lust auf Workouts, die sich schon wieder nach Arbeit anfühlen?"
 			sizeClass="card__container--smaller"
 			/>
-		</Grid>
-
-		<Grid 
-		gridColumnClass="grid-2fr--arrow"
-		gridGapClass="grid__gap--smaller">
+			</div>
+			<div class="row--3  col--2">
+			<Arrow 
+			img={{
+				src:'/images/arrow-color-gradient.svg',
+				alt:'Arrow pointing down'
+			}}
+			alignClass="align--top"
+			directionClass="rotate--45"
+			/>
+		</div>
+			<div class="col--3-6  row--3">
 			<Card 
 			img={{
 				src:'/images/streaming-tv-app.svg',
@@ -148,15 +162,9 @@ paddingClass="padding--120"
 			marginClass="card__container--span-2"
 			sizeClass="card__container--smaller"
 			/>
-			<Arrow 
-			img={{
-				src:'/images/arrow-color-gradient.svg',
-				alt:'Arrow pointing down'
-			}}
-			alignClass="align--top"
-			directionClass="rotate--scale-1"
-			/>
+		</div>
 		</Grid>
+	</Grid>
 	</Wrapper>
 
 	
@@ -220,10 +228,10 @@ paddingClass="padding--60"
 <!-- FACTS ÜBER ZUMBA SECTION -->
 <Section
 paddingClass="padding--60"
+heading="Zumba® macht Spaß und Fit"
 >
     <Wrapper 
     wrapperClass="wrapper">
-	<h2>Zumba® macht Spaß und Fit</h2>
     <Grid
     gridColumnClass="grid-3fr"
 	gridGapClass="grid__gap--smaller">
@@ -276,11 +284,11 @@ paddingClass="padding--60"
 <Section
 paddingClass="padding--120"
 backgroundImgClass="color-patch--pink-flipped"
+heading="Es ist für jeden etwas dabei"
 >
 <Wrapper
 wrapperClass="wrapper"
 >
-<h2 class="p__align--right">Es ist für jeden etwas dabei</h2>
     <Grid 
     gridColumnClass="grid-3fr"
     >
@@ -328,10 +336,10 @@ img={{
 <!-- SO FUNKTIONIERT ES SECTION -->
 <Section
 paddingClass="padding--120"
+heading="Mit Zumba® -Stream trainierst du wann, wo und wie oft du willst"
 >
 <Wrapper
 wrapperClass="wrapper">
-<h2>Mit Zumba® -Stream trainierst du wann, wo und wie oft du willst</h2>
     <Grid
     gridColumnClass="grid-3fr"
     >

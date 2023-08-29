@@ -5,7 +5,7 @@ const { figure } = Astro.props;
 <div class="figure__container">
     { figure && 
 	(<figure>
-	<img src={ figure.src } alt={ figure.alt } width="560"/></figure>
+	<img class="figure" src={ figure.src } alt={ figure.alt } width="560"/></figure>
     )}
 	<figcaption class="figure__cap"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3737860/" class="link  link--small" target="_blank">Luettgen M. et al.</a> Zumba(®): Is the "fitness-party" a good workout? J Sports Sci Med. 2012</figcaption>
     

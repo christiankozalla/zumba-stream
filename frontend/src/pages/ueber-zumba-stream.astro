@@ -10,7 +10,10 @@ import TeamMember from "../components/TeamMember.astro";
 import BlogImage from "../components/BlogImage.astro";
 ---
 
-<MainLayout>
+<MainLayout
+title="Über Zumba® -Stream Zumba Stream"
+description=""
+>
     <HeroShot
 		img={{
 			src:'/images/team.webp',
@@ -24,8 +27,11 @@ import BlogImage from "../components/BlogImage.astro";
 			text:'7 Tage kostenlos testen'
 		}}
         backgroundImgClass="teaser__background-img2"
+        displayClass="hidden"
+        teaserImgClass="teaser__img-group"
 	/>
     <Section 
+    paddingClass="padding--180"
     >
     <Wrapper
     wrapperClass="wrapper--smaller">

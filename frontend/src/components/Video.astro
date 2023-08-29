@@ -4,10 +4,10 @@ const { video } = Astro.props;
 
 <div class="video__container">
 { video &&
-<video class="video" width={ video.width } height={ video.height } controls poster={ video.img }>
+(<video class="video" width="800" controls poster={ video.img }>
     <source src={ video.src } type="video/mp4">
     Your browser does not support the video tag.
-  </video> 
+  </video>)
 }
 </div>
 
@@ -16,9 +16,15 @@ const { video } = Astro.props;
 .video__container {
   display: flex;
   justify-content: center;
-  padding: 2em;
 }
+
 .video {
     border-radius: var(--border-radius);
+}
+
+@media only screen and (min-width: 40em) {
+  .video__container {
+    padding: 2em;
+  }
 }
 </style>
