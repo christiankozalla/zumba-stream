@@ -5,14 +5,14 @@ const { teaserText, videoLarge, videoSmall, heading, text, img, link } = Astro.p
 <h5 class="video-card__teaser">{ teaserText }</h5>
 <div class="video-card__container">
     { videoLarge &&
-        (<video class="video-large" width="800" controls poster={ videoLarge.img }>
-            <source src={ videoLarge.src } type="video/mp4">
+        (<video class="video-large lazy" preload="none" width="800" controls poster={ videoLarge.img }>
+            <source data-src={ videoLarge.src } type="video/mp4">
             Your browser does not support the video tag.
           </video>)
         }
         { videoSmall &&
-        (<video class="video-small" width="800" controls poster={ videoSmall.img }>
-            <source src={ videoSmall.src } type="video/mp4">
+        (<video class="video-small lazy" preload="none" width="800" controls poster={ videoSmall.img }>
+            <source data-src={ videoSmall.src } type="video/mp4">
             Your browser does not support the video tag.
           </video>)
         }
@@ -81,3 +81,32 @@ const { teaserText, videoLarge, videoSmall, heading, text, img, link } = Astro.p
 }
 
 </style>
+
+<script is:inline>
+	document.addEventListener("DOMContentLoaded", function() {
+		var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+		if ("IntersectionObserver" in window) {
+			var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+				entries.forEach(function(video) {
+					if (video.isIntersecting) {
+						for (var source in video.target.children) {
+							var videoSource = video.target.children[source];
+							if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+								videoSource.src = videoSource.dataset.src;
+							}
+						}
+
+						video.target.load();
+						video.target.classList.remove("lazy");
+						lazyVideoObserver.unobserve(video.target);
+					}
+				});
+			});
+
+			lazyVideos.forEach(function(lazyVideo) {
+				lazyVideoObserver.observe(lazyVideo);
+			});
+		}
+	});
+</script>
