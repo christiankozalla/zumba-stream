@@ -1,5 +1,5 @@
 ---
-const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", name, type, instaProfile } = Astro.props;
+const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", name, type, text, instaProfile } = Astro.props;
 ---
 
 <div>
@@ -23,9 +23,11 @@ const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", n
     </div>
     <h5 class="p__align--center">{ name }</h5>
     <p class="p__align--center  p--no-margin">{ type }</p>
-        <div class="member__insta">
-            <a href={ instaProfile }><i class="icofont-instagram  icofont-2x"></i></a>
-        </div>
+    <div class="member__insta">
+    <a href={ instaProfile } target="_blank"><i class="icofont-instagram  icofont-2x"></i></a>
+    </div>
+    <p class="member__text" set:html={ text } />
+   
 </div>
 
 <style>
@@ -35,7 +37,6 @@ const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", n
         width: 200px;
         height: 200px;
         overflow: hidden;
-        margin-bottom: 1em;
         display: flex;
         margin: 1em auto;
     }
@@ -120,6 +121,20 @@ const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", n
     }
 
     .team-member-12 {
+        background-image: url(/images/julia.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-13 {
+        background-image: url(/images/anne-sophie.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .team-member-14 {
         background-image: url(/images/kristina.webp);
         background-repeat: no-repeat;
         background-size: cover;
@@ -141,7 +156,12 @@ const { backgroundImgClass, iconFitness = "", iconToning= "", iconStrong = "", n
 
     .member__insta {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        margin-top: 0.4em;
+    }
+
+    .member__text {
+        padding: 0 2em;
     }
 
     .icofont-instagram {

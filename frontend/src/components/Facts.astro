@@ -1,45 +1,70 @@
 ---
-const { nr, text, heading = "", alignItemsClass = "" } = Astro.props;
+const { nr, text, heading = "", alignItemsClass = "", gridTemplateCol ="", textSizeClass = "" } = Astro.props;
 ---
 
 
-    <div class="facts">
+    <div class={`
+    facts__container
+    ${gridTemplateCol}`}>
+        <div>
         <p class={`
             fact__nr
             ${alignItemsClass}
             `}>{ nr }</p>
+        </div>
         <div class={`
+        facts__text-container
         ${alignItemsClass}
         `}>
         <h4 class="fact__heading">{ heading }</h4>
-        <p set:html={ text } class="fact__text" />
+        <p set:html={ text } class={`
+        fact__text
+        ${textSizeClass}
+        `} />
         </div>   
     </div>
 
 
 <style>
-  
+    .facts__container {
+            display: grid;
+            gap: 0.8em; 
+            grid-template-columns: 1fr 3fr;
+        }
+
+    .facts__container--auto {
+       grid-template-columns: auto auto;
+    }
+
+    .facts__text-container {
+        align-items: center;
+        justify-items: center;
+        margin: auto 0;
+        text-align: left;
+    }
+
     .fact__nr {
         font-family: var(--ff-heading);
-        font-size: var(--fs-500);
+        font-size: var(--fs-700);
+        font-weight: bolder;
+        text-align: right;
         margin: 0;
         color: var(--first-color);
     }
 
     .fact__text {
-        font-size: var(--fs-300);
         margin: 0;
     }
 
-    .facts {
-            display: flex;
-            gap: 1em;
-        }
+    .fact__text--smaller,
+    .fact__text--bigger {
+        font-size: var(--fs-300);
+        line-height: 1.6;
+    }
 
-        
         .fact__heading {
             padding-top: 0.3em;
-            margin-top: 0;
+            margin-top: -0.6em;
         }
 
         .align-items--start {
@@ -53,8 +78,8 @@ const { nr, text, heading = "", alignItemsClass = "" } = Astro.props;
         @media only screen and (min-width: 40em) {
                
         .fact__nr {
-        font-size: var(--fs-600);
         margin-top: 0;
+        font-size: var(--fs-xl);
         }
         }
 </style>

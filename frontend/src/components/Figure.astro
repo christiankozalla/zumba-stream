@@ -7,7 +7,7 @@ const { figure } = Astro.props;
 	(<figure>
 	<img class="figure" src={ figure.src } alt={ figure.alt } width="560"/></figure>
     )}
-	<figcaption class="figure__cap"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3737860/" class="link  link--small" target="_blank">Luettgen M. et al.</a> Zumba(®): Is the "fitness-party" a good workout? J Sports Sci Med. 2012</figcaption>
+	<figcaption class="figure__cap"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3737860/" class="figure__link  link  link--small" target="_blank">Luettgen M. et al.</a> Zumba(®): Is the "fitness-party" a good workout? J Sports Sci Med. 2012</figcaption>
     
 </div>
 
@@ -21,17 +21,16 @@ const { figure } = Astro.props;
     font-family: var(--ff-text);
 }
 
-.figure__link {
-    color: var(--first-color);
-}
-
-.figure__link:hover {
-    color: var(--second-color);
-}
-
 @media only screen and (min-width: 40em) {
     .figure__container {
     margin-top: 0;
+}
+}
+
+@media only screen and (min-width: 80em) {
+
+.figure__cap {
+    margin-top: 0.4em;
 }
 }
 

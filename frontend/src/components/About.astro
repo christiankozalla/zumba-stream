@@ -15,22 +15,11 @@
         </div>
         <img src="/images/kristina.webp" class="about__img"/>   
     </div>
-    <div>
-        
-        <img src="/images/daniel.webp" class="about__img"/>   
-        <div class="about__grid--flex">
-            <div>
-                <img src="/images/arrow-color-gradient.svg" class="about__grid-arrow"/>
-            </div>
-            <div class="about__person">
-                <h6>Daniel Huber</h6>
-                <p class="p--no-margin">Gründer & Geschäftführer</p>
-            </div>
-        </div>
-    </div>    
+   
     <div class="about__grid-text">
-        <p>Das Herz vom Salsa Dance Studio - Kristina & Daniel Huber! Kristina ist die energiegeladene Zumba®  - Mama & Haupttrainerin des Studios. Sie hat vor Jahren selbst als Teilnehmerin angefangen und sich direkt in Zumba® verliebt!</p>
-        <p>Mit der Übernahme vom Salsa Dance Studio hat sie sich einen Lebenstraum erfüllt. Im Hintergrund sorgt ihr Ehemann Daniel für Organisatorisches und als Power Team leiten sie das Zumba® Online Studio!</p>
+        <h4>Die Initiatorin von Zumba®-Stream</h4>
+        <p>Ich bin Kristina und deine Haupttrainerin im Online Stream. Ich habe selbst vor Jahren als Teilnehmerin angefangen und habe mich direkt in Zumba® verliebt!</p>
+        <p>Mit Zumba® -Stream habe ich mir einen Lebenstraum erfüllt, die Energie und Lebensfreude durch Zumba® Online auch an andere weiterzugeben.</p>
     </div>
 </div>
 
@@ -50,6 +39,7 @@
     .about__img {
         width: 80%;
         margin: 1.2em 0;
+        border-radius: var(--border-radius);
     }
 
     .about__person {
@@ -64,7 +54,7 @@
     
     @media only screen and (min-width: 40em) {
         .about__grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     }
 

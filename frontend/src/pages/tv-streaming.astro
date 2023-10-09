@@ -1,0 +1,70 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Lists from "../components/Lists.astro";
+import BlogImage from "../components/BlogImage.astro";
+---
+
+<MainLayout
+title="TV Streaming von Zumba®-Stream"
+description="Du hast keinen Plan wie du Zumba®-Stream über deinen TV abspielst. Hier erfährst du, welche Möglichkeiten du hast: Schritt für Schritt erklärt."
+opengraph={{
+	title:'TV Streaming Zumba® online',
+	url:'https://www.zumba-stream.com/tv-streaming/',
+	image:'https://www.zumba-stream.com/images/tv-streaming-opengraph.jpg',
+	type:'website',
+	description:'Lerne, wie du Zumba®-Stream auf dem TV abspielst.',
+	locale:'de'
+}}
+>
+<HeroShot 
+heading="Streaming auf dem TV"
+subheading="Du kannst Chromecast und Apple AirPlay verwenden, um deine Videos aus unserer Mediathek auf deinem Fernseher anzusehen, indem du sie von deinem Laptop, Tablet oder Handy aus übertragen kannst."
+displayClass="hidden"
+/>
+<Section
+>
+<Wrapper
+wrapperClass="wrapper--smaller">
+    <h2>Chromecast zum Streamen verwenden</h2>
+    <Lists 
+    listItems={[
+        "Chromecast an den Fernseher anschließen.",
+        "Verbinde dein Abspielgerät (Laptop, Handy) mit demselben Wi-Fi-Netzwerk wie Dein Fernsehgerät.",
+        "Suche das Video aus, das Du streamen möchtest auf deinem Laptop oder Gerät und klicke auf das Chromecast-Symbol oder AirPlay Symbol.",
+        "Wähle im angezeigten Pop-up-Fenster das gewünschte Fernsehgerät aus und führe die Übertragung durch."
+    ]}
+    />
+    <BlogImage
+    img={{
+        src:'/images/airplay.webp',
+        alt:'Airplay Abbildung'
+    }}
+    />
+    <h2>Casting-Optionen bei Verwendung von Chromecast</h2>
+    <p>Die Verwendung des Google Chrome-Webbrowsers wird unterstützt. Casting von einem iPhone und nativen Android-Apps wird unterstützt. Die Verwendung eines iPhone/iPad-Webbrowsers (iOS-Geräte), entweder Safari oder Google Chrome, ist aufgrund der Einschränkungen von Apple nicht möglich (stattdessen wird Airplay unterstützt). Die Verwendung des Android-Webbrowsers und von Google Chrome wird unterstützt. Die Übertragung über andere Webbrowser ist zwar möglich, kann aber nicht garantiert werden. Sie können nur auf Chromecast-Geräte oder Android-Boxen, wie Xiaomi Mi TV, übertragen.</p>
+    <p>Quelle: uscreen</p>
+    <h2>AirPlay zum Streamen verwenden</h2>
+    <p>Du kannst AirPlay verwenden, um Videos von deinem Mac, iPad, iPod touch oder iPhone auf deinem Fernseher abzuspielen.</p>
+    <Lists 
+    listItems={[
+        "Verbinde dein Gerät mit demselben Wi-Fi-Netzwerk wie deine Apple TV oder AirPlay 2-kompatibles Smart TV.",
+        "Suche das Video, das du streamen möchtest.",
+        "Tippe auf das AirPlay-Symbol.",
+        "Wähle deine Apple TV oder dein AirPlay 2-kompatibles Smart TV."
+    ]}
+    />
+    <p>Um das Streaming zu beenden, tippe auf das AirPlay-Symbol in der App, von der du streamen möchtest und dann auf dein iPhone, iPad, deinen Mac oder iPod touch in der Liste. Du kannst auch Mirroring anstelle von AirPlay verwenden, um Inhalte zu streamen. HINWEIS: Einige Fernsehgerätehersteller haben AirPlay 2 direkt in ihre Fernsehgeräte integriert, sodass du fast alles von einem iOS-Gerät oder Mac auf ein AirPlay 2-fähiges Smart-TV-Gerät übertragen oder spiegeln kannst.</p>
+    <p>Quelle: uscreen</p>
+    <BlogImage
+    img={{
+        src:'/images/chromcast.webp',
+        alt:'Chromcast Abbildung'
+    }}
+    />
+
+</Wrapper>
+</Section>
+</MainLayout>

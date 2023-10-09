@@ -9,22 +9,30 @@ import ContactForm from "../components/ContactForm.astro";
 ---
 
 <MainLayout
-title="Kontakt Salsa Dance Studio Mainz"
-description=""
+title="Kontakt Zumba®-Stream"
+description="Du fragst dich wie du Zumba®-Stream kontakieren kannst. Auf unserer Kontaktseite gibt es ein Kontaktformular, welches du nutzen kannst, um uns deine Fragen oder dein Feedback zu schicken."
+opengraph={{
+	title:'Zumba®-Stream Kontakt',
+	url:'https://www.zumba-stream.com/kontakt/',
+	image:'https://www.zumba-stream.com/images/index-opengraph.jpg',
+	type:'website',
+	description:'Fragen zum Zumba® online? Erhalte Antworten vom Zumba®-Stream Team.',
+	locale:'de'
+}}
 >
 <HeroShot 
 heading="Kontakt und Support"
 subheading="Du brauchst Hilfe bei einem Thema oder hast eine Frage? Schreibe uns eine Nachricht."
+displayClass="hidden"
 />
 <Section
-paddingClass="padding--120"
 >
 <Wrapper
 wrapperClass="wrapper">
     <Grid
     gridColumnClass="grid-2fr">
     <div>
-    <h3>Salsa Dance Studio Mainz GmbH</h3>
+    <h3>Zumba®-Stream</h3>
 <Address />
 </div>
 <ContactForm/>

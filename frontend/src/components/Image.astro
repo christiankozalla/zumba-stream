@@ -4,12 +4,13 @@ const { img } = Astro.props;
 
 <div>
 { img &&
-<img src={ img.src } alt={ img.alt } class="img"/>
+(<img src={ img.src } alt={ img.alt } class="img"/>)
 }
 </div>
 
 <style>
     .img {
         margin: 1em 0;
+        border-radius: var(--border-radius);
     }
 </style>

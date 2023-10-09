@@ -1,20 +1,33 @@
 ---
-const { video, heading, text, img } = Astro.props;
+const { teaserText, videoLarge, videoSmall, heading, text, img, link } = Astro.props;
 
 ---
-
+<h5 class="video-card__teaser">{ teaserText }</h5>
 <div class="video-card__container">
-    { video &&
-    <video class="video-card__video" src={ video.src } controls poster={ video.thumbnail }/>
-    }
+    { videoLarge &&
+        (<video class="video-large" width="800" controls poster={ videoLarge.img }>
+            <source src={ videoLarge.src } type="video/mp4">
+            Your browser does not support the video tag.
+          </video>)
+        }
+        { videoSmall &&
+        (<video class="video-small" width="800" controls poster={ videoSmall.img }>
+            <source src={ videoSmall.src } type="video/mp4">
+            Your browser does not support the video tag.
+          </video>)
+        }
     <h4 class="video-card__heading">{ heading }</h4>
     <p class="video-card__text">{ text }</p>
     {img &&
     (<img class="video-card__icon" src={ img.src } alt={ img.alt } width="50"/>)
     }
+    <a class="link" href={ link }>Jetzt mit dem 1. Video loslegen</a>
 </div>
 
 <style>
+.video-card__teaser {
+    padding: 0 1.2em;
+}
 
 .video-card__container {
     border-radius: var(--border-radius);
@@ -22,6 +35,7 @@ const { video, heading, text, img } = Astro.props;
     padding: 1.8em;
     background-color: #fff;
     position: relative;
+    margin: 1em 0 2em 0;
 }
 
 .video-card__video {
@@ -30,7 +44,7 @@ const { video, heading, text, img } = Astro.props;
 }
 
 .video-card__text {
-    font-size: var(--fs-xs);
+    font-size: var(--fs-300);
 }
 
 .video-card__icon {
@@ -38,9 +52,32 @@ const { video, heading, text, img } = Astro.props;
     align-self: flex-end;
     display: flex;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 0;
     margin: 0.4em;
+}
+
+.video-large,
+.video-small {
+    border-radius: var(--border-radius);
+}
+
+.video-small {
+  display: flex;
+}
+
+.video-large {
+  display: none;
+}
+
+@media only screen and (min-width: 50em) {
+  .video-large {
+    display: unset;
+  }
+
+  .video-small {
+    display: none;
+  }
 }
 
 </style>

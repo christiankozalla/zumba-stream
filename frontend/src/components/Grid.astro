@@ -20,19 +20,22 @@ ${gridMarginClass}
     .grid-1fr,
     .grid-2fr,
     .grid-3fr,
+    .grid-3fr--1fr,
+    .grid-3fr--3fr,
     .grid-4fr,
     .grid-6fr  {
         grid-template-columns: 1fr;
         gap: 1em;
     }
 
-    .grid-4fr--arrow,
-    .grid-2fr--arrow  {
+    .grid-8fr {
         grid-template-columns: 1fr;
-        gap: 2em;
-    }
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .grid__gap {
+    .grid__gap--bigger {
         gap: 1.8em;
     }
 
@@ -44,27 +47,38 @@ ${gridMarginClass}
         margin-bottom: 120px;
     }
 
+    @media only screen and (min-width: 30em) {
+        .grid-3fr--3fr {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-8fr {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
     @media only screen and (min-width: 40em) {
-        .grid-2fr {
+        
+        .grid-2fr,
+        .grid-3fr,
+        .grid-4fr {
             grid-template-columns: repeat(2, 1fr);
-        }
-
-        .grid-2fr-arrow--reverse {
-            grid-template-columns: auto 1fr;
-        }
-       
-        .grid-4fr--arrow {
-            grid-template-columns: repeat(3,1fr);
         }
 
         .row--span-2 {
             grid-row: span 2;
         }
+
+        .grid-8fr {
+        grid-template-columns: repeat(3, 1fr);
+        }
+        
     }
 
     @media only screen and (min-width: 60em) {
-        .grid-3fr {
+       
+        .grid-3fr,
+        .grid-3fr--1fr {
             grid-template-columns: repeat(3, 1fr);
         }
 
@@ -74,10 +88,6 @@ ${gridMarginClass}
     }
 
     @media only screen and (min-width: 80em) {
-        .grid-2fr--arrow {
-            grid-template-columns: 1fr auto;
-        }
-
         .grid-4fr {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -87,7 +97,9 @@ ${gridMarginClass}
         }
 
         .grid-8fr {
-            grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
         }
     }
 

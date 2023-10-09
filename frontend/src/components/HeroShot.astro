@@ -8,34 +8,41 @@ ${backgroundImgClass}
 ${imgClass}
 ${backgroundColorClass}
 `}>
-    <div class="teaser__img-container">
-        {img && 
-        (
-        <img class={`
-            ${teaserImgClass}
-            `} src={ img.src } alt={ img.alt } width={ img.width }/>
-        )
-        }
-    </div>
+    
     <div class="teaser__text-container">
         <div class="teaser__details">
-            <p>{ author }</p>
+            <p><strong>{ author }</strong></p>
         <p class="p--no-margin">{ date }</p>
         <h6 class="teaser__time  p--no-margin">{ readingTime }</h6>
         <div class={`
+        teaser__share
         ${displayClass}
         `}>
         <a href={ facebookShareLink }><i class="icofont-facebook  icofont-lg"></i></a>
         <a href={ linkedinShareLink }><i class="icofont-linkedin  icofont-lg"></i></a>
         </div>
         </div>
-        <h1 class="teaser__heading">{ heading }</h1>
-        <p set:html={ subheading } class="teaser__subheading"/>
-        {btn &&
-        (
-        <div class="teaser__btn-container"><a class="teaser__btn" href={ btn.href }>{ btn.text }</a></div>
-        )
-        }
+       
+            <div class="teaser__heading-img-container">
+                <div>
+                <h1 class="teaser__heading">{ heading }</h1>
+                <p set:html={ subheading } class="teaser__subheading"/>
+                {btn &&
+                (
+                <div class="teaser__btn-container"><a class="teaser__btn" href={ btn.href }>{ btn.text }</a></div>
+                )
+                }
+                </div>
+                <div class="teaser__img-container">
+                {img && 
+                (
+                <img class={`
+                    ${teaserImgClass}
+                    `} src={ img.src } alt={ img.alt } width={ img.width }/>
+                )
+                }
+                </div>
+            </div>
     </div>
 </div>
 
@@ -43,21 +50,33 @@ ${backgroundColorClass}
     .teaser__container {
     display: grid;
     grid-template-areas: "teaser__container";
-    margin-bottom: -7em;
+    margin: 0 auto;
+    max-width: 1400px;
     }
 
     .teaser__container > * {
         grid-area: teaser__container;
     }
 
+    .teaser__heading-img-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .teaser__img-container {
+        grid-row-start: 1;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
     .teaser__text-container {
-        padding: 2em;
+        padding: 0 2em;
     }
 
     .teaser__heading {
-        font-size: var(--fs-600);
-        width: 90%;
-        line-height: 1.2;
+        font-size: var(--fs-700);
+        max-width: 100%;
+        line-height: 1;
         margin-bottom: 0.3em;
         padding-top: 1rem;
     }
@@ -69,13 +88,6 @@ ${backgroundColorClass}
     }
 
     .teaser__img-dancer {
-        max-width: 40%;
-        position: absolute;
-        top: 6%;
-        right: -10%;
-    }
-
-    .teaser__img-group {
         display: none;
     }
 
@@ -101,31 +113,17 @@ ${backgroundColorClass}
 
     /* BACKGROUND IMAGES */
 
-    .teaser__background-img {
-        background-image: url(/images/color-patch-pink01-flipped.svg);
-        background-position: top;
-        background-size: 100%;
-        background-repeat: no-repeat;
-    }
-
-    .teaser__background-img1 {
-        background-image: url(/images/color-patch-pink.svg);
-        background-position: right top;
-        background-size: 50%;
-        background-repeat: no-repeat;
-    }
-
     .teaser__background-img2 {
-        background-image: url(/images/color-patch-orange.svg);
-        background-position: right top;
+        background-image: url(/images/color-patch-green-yellow-orange.svg);
+        background-position: top left;
         background-size: cover;
         background-repeat: no-repeat;
     }
 
-    .teaser__background-img3 {
-        background-image: url(/images/color-patch.svg);
+    .teaser__background--color-patch {
+        background-image: url(/images/color-patch-flipped.svg);
         background-position: right top;
-        background-size: 100%;
+        background-size: contain;
         background-repeat: no-repeat;
     }
 
@@ -150,7 +148,13 @@ ${backgroundColorClass}
         justify-content: flex-start;
         gap: 1em;
         align-items: center;
-        margin-bottom: -2em;
+        margin-top: 4em;
+        margin-bottom: -0.6em;
+    }
+
+    .teaser__share {
+        display: flex;
+        gap: 1em;
     }
 
     .teaser__time {
@@ -163,43 +167,67 @@ ${backgroundColorClass}
         display: none;
     }
 
+ 
+
 @media only screen and (min-width: 40em) {
     .teaser__text-container {
-        padding: 2rem;
-        max-width: 70%;
+        padding: 0 2rem;
+        max-width: 100%;
     }
 
-    .teaser__heading {
-        font-size: var(--fs-700);
+    .teaser__heading-img-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 2em;
     }
+
+    .teaser__img-container {
+        grid-column-start: 2;
+    }
+
 
     .teaser__img-dancer {
-        right: 0;
-    }
-
-    .teaser__img-group {
         display: unset;
-        margin-right: 18rem;
-        margin-top: -5em;
+        margin-top: -10%;
     }
 
     .teaser__background-img2 {
-        background-size: 50%;
+        background-position: top right;
+        background-size: contain;
     }
-
     .teaser__background-img {
         background-size: 70%;
         background-position: right;
     }
 
     .teaser__container {
-        padding: 5em 0;
+        padding: 5em 0 0 0;
+    }
+
+    .teaser__details {
+        margin-top: 0;
     }
 }
+
+@media only screen and (min-width: 48em) {
+
+       .teaser__text-container {
+        padding: 0 2rem 1rem 2rem;
+    }
+
+    .teaser__img-dancer {
+        max-width: 80%;
+    }
+}
+
 
 @media only screen and (min-width: 60em) {
     .teaser__heading {
         font-size: var(--fs-xl);
+    }
+
+    .teaser__img-dancer {
+        max-width: 80%;
     }
 
     .teaser__img-container {
@@ -207,22 +235,34 @@ ${backgroundColorClass}
         display: flex;
         justify-content: flex-end;
     }
+
+    .teaser__subheading {
+        margin-bottom: 2em;
+        font-size: var(--fs-400);
+        line-height: 1.4;
+    }
+
+    .teaser__heading-img-container {
+        grid-template-columns: 1fr auto;
+    }
 }
 
 @media only screen and (min-width: 80em) {
     .teaser__text-container {
-        max-width: 50%;
-        margin-left: 2em;
+        max-width: 80%;
+        margin: 0 auto;
     }
 
     .teaser__img-dancer {
-        position: unset;
-        margin-right: 18rem;
-        margin-top: -5em;
+        max-width: 80%;
+    }
+
+    .teaser__img-group {
+        right: 10%;
     }
 
     .teaser__background-img3 {
-        background-size: 60%;
+        background-size: contain;
     }
 }
 </style>
