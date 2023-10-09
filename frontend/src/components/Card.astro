@@ -1,11 +1,9 @@
 ---
-const { img, text, subtext = "", spanClass = "", sizeClass = "" } = Astro.props;
+const { img, text, subtext = "" } = Astro.props;
 ---
 
 <div class={`
 card__container
-${spanClass}
-${sizeClass}
 `}>
     { img &&
     (<img class="card__img" width="50" src={ img.src } alt={ img.alt }/>)
@@ -18,11 +16,12 @@ ${sizeClass}
 
 .card__container {
     border-radius: var(--border-radius);
-    box-shadow: 12px 16px 20px #F6F7F8;
+    box-shadow: 12px 16px 18px #eaedee;
     padding: 1.8em;
     background-color: #fff;
-    margin: auto;
-    
+    margin: 1.6em 1em;
+    max-width: 320px;
+    position: relative;
 }
 
 .card__container--smaller {
@@ -31,10 +30,13 @@ ${sizeClass}
 
 .card__img {
     margin-bottom: 0.4em;
+    position: absolute;
+    top: -1em;
+    left: -1em;
 }
 
 .card__text {
-    font-size: var(--fs-xs);
+    font-size: var(--fs-300);
 }
 
 .card__subtext {
@@ -42,10 +44,10 @@ ${sizeClass}
     font-size: var(--fs-xs);
 }
 
-@media only screen and (min-width: 40em) {
-    .card__container--span-2 {
-    grid-column: 1 / 3
-}
+@media only screen and (min-width: 60em) {
+    .card__container {
+        margin: 2.2em 1em;
+    }
 }
 
 </style>

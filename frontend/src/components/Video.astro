@@ -1,11 +1,18 @@
 ---
-const { video } = Astro.props;
+const { videoLarge, videoSmall } = Astro.props;
 ---
 
 <div class="video__container">
-{ video &&
-(<video class="video" width="800" controls poster={ video.img }>
-    <source src={ video.src } type="video/mp4">
+{ videoLarge &&
+(<video class="video-large" width="800" controls poster={ videoLarge.img }>
+    <source src={ videoLarge.src } type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+)
+}
+{ videoSmall &&
+(<video class="video-small" width="800" controls poster={ videoSmall.img }>
+    <source src={ videoSmall.src } type="video/mp4">
     Your browser does not support the video tag.
   </video>)
 }
@@ -16,15 +23,45 @@ const { video } = Astro.props;
 .video__container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.video {
+.video-large,
+.video-small {
     border-radius: var(--border-radius);
 }
+
+.video-small {
+  display: flex;
+}
+
+.video-large {
+  display: none;
+}
+
 
 @media only screen and (min-width: 40em) {
   .video__container {
     padding: 2em;
+    max-width: 1200px;
   }
 }
+
+@media only screen and (min-width: 50em) {
+  .video-large {
+    display: unset;
+  }
+
+  .video-small {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .video__container {
+    padding: 0;
+  }
+}
+
 </style>

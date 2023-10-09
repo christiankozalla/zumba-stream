@@ -1,5 +1,5 @@
 ---
-const { heading = "", backgroundImgClass="", paddingClass= "", headingColorClass= "" } = Astro.props;
+const { heading = "", backgroundImgClass="", paddingClass= "", headingColorClass= "", headingAlignClass= "" } = Astro.props;
 ---
 <div class={`
 section__background-img
@@ -9,130 +9,71 @@ ${backgroundImgClass}
 section
 ${paddingClass}
 `}>
+<div class="section__heading-container">
     <h2 class={`
     section__heading
     ${headingColorClass}
-    `}>{ heading }</h2>
+    ${headingAlignClass}
+    `} set:html={ heading } />
+    </div>
     <slot />
 </section>
 </div>
 <style>
-
-    .padding--180 {
-            padding: 120px 0 0 0;
-        }
-
-   .padding--120 {
-        padding: 60px 0;
+    
+    .section {
+        padding: 2em 0 3em 0;
     }
 
-    .padding--60 {
-        padding: 30px 0 30px 0;
-    }
-
-    .padding--30 {
-        padding: 30px 0 60px 0;
-    }
-
-    .padding--00 {
-        padding: 0 0 120px 0;
-    }
-
-    .padding--top-negative {
-        padding: 60px 0 0;
+    .section__heading-container {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .section__heading {
-        max-width: 90%;
+        max-width: 100%;
+        padding: 0 1em;
+    }
+
+    .section__heading--left {
+        text-align: left;
+        margin-right: auto;
+    }
+
+    .section__heading--right {
+        margin-left: auto;
         text-align: right;
+    }
+
+    .section__heading--center {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .section__heading--white {
         color: #fff;
     }
 
-    .section__background-img {
-        background-size: fit;
-        background-repeat: no-repeat;
-    }
-
-    .color-patch {
-        background-image: url('/images/color-patch.svg');
-        background-position: right;
-    }
-
-    .color-patch--small {
-        background-image: url('/images/color-patch-small.svg');
-        background-position: bottom;
-        background-size: cover;
-    }
-
-    .color-patch--big {
-        background-image: url('/images/color-patch-orange.svg');
-        background-position: left;
-    }
-
-    .color-patch--pink-flipped {
-        background-image: url('/images/color-patch-small-flipped.svg');
-        background-position: top;
-        background-size: 100%;
-    }
-
-    .color-patch--pink {
-        background-image: url('/images/color-patch-pink.svg');
-        background-position: center;
-        background-size: cover;
-    }
-
-    .color-gradient--bluepinkorange {
-        background-image: url('/images/color-gradient-bluepinkorange.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
     .linear-gradient {
         background-image: linear-gradient(45deg, var(--first-color), var(--third-color), var(--second-color), var(--fourth-color));
-        padding: 60px 0;
+        padding: 2em 0;
     }
 
     @media only screen and (min-width: 40em) {
-        .section__heading {
-        max-width: 60%;
-        margin: 0 auto 1.6em auto;
-    }
-
-    .padding--180 {
-        padding: 180px 0 60px 0;
-    }
-
-    .padding--60 {
-        padding: 60px 0 60px 0;
-    }
-
-    .padding--top-negative {
-        padding: 30px 0 60px 0;
-    }
-
-    .color-patch--small {
-        background-image: url('/images/color-patch-small.svg');
-        background-position: top right;
-        background-size: contain;
-    }
-
-    .color-patch--pink {
-        background-position: right;
-        background-size: unset;
-    }
-
-    .color-patch--pink-flipped {
-        background-size: 100%;
+    .section__heading {
+        max-width: 80%;
     }
 
     }
 
     @media only screen and (min-width: 80em) {
-        .padding--top-negative {
-            padding-top: -120px;
-        }
+        .section__heading {
+        max-width: 60%;
+    }
+
+    .section {
+        padding: 3em 0 4em 0;
+    }
     }
 </style>

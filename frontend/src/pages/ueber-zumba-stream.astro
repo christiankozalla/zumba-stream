@@ -5,25 +5,33 @@ import Section from "../components/Section.astro";
 import Wrapper from "../components/Wrapper.astro";
 import Grid from "../components/Grid.astro";
 import About from "../components/About.astro";
-import Video from "../components/Video.astro";
 import TeamMember from "../components/TeamMember.astro";
 import BlogImage from "../components/BlogImage.astro";
+import BackgroundImg from "../components/BackgroundImg.astro";
 ---
 
 <MainLayout
-title="Über Zumba® -Stream Zumba Stream"
-description=""
+title="Über Zumba®-Stream"
+description="Du willst Sport machen aber nicht im Fitnessstudio. Joggen und co. ist keine Option für dich. Probiere Zumba® Online mit Zumba®-Stream. Warum? Es macht Spaß. Du kannst es zu jederzeit und von überall machen. Du formst deinen Körper und verbrennst Kalorien."
+opengraph={{
+	title:'Über Zumba®-Stream',
+	url:'https://www.zumba-stream.com/ueber-zumba-stream/',
+	image:'https://www.zumba-stream.com/images/ueber-opengraph.jpg',
+	type:'website',
+	description:'Wer macht Zumba® online? Lerne Zumba®-Stream.',
+	locale:'de'
+}}
 >
     <HeroShot
 		img={{
 			src:'/images/team.webp',
-			alt:'',
+			alt:'Team von Zumba®-Stream',
 			width:'500'
 		}}
-		heading="Mit Zumba® -Stream erreichst du dein Wunschgewicht ohne Stress"
+		heading="Mit Zumba®-Stream erreichst Du Dein Traumgewicht ohne Stress"
 		subheading="Zumba® ist unsere Leidenschaft, Fitness unser Hobby!"
 		btn={{
-			href:'',
+			href:'https://zim.uscreen.io/join',
 			text:'7 Tage kostenlos testen'
 		}}
         backgroundImgClass="teaser__background-img2"
@@ -31,24 +39,25 @@ description=""
         teaserImgClass="teaser__img-group"
 	/>
     <Section 
-    paddingClass="padding--180"
     >
     <Wrapper
     wrapperClass="wrapper--smaller">
-        <p>Jede unserer 8 Zumba® Instruktoren bringt ihren eigenen Stil und Musikgeschmack mit ein, da ist für jeden das richtige dabei.</p>
-        <p>Mit Zumba® -Stream bieten wir ein riesen Angebot mit mehr als 150 Stunden Zumba® Online Kursen, die Du immer kostenlos testen kannst. Suche Dir deinen Zumba® Online Kurs und starte einfach.</p>
-        <p>Der Spaß an Bewegung und die gute Laune beim Tanzen wird bei uns großgeschrieben. Jede Zumba® Instruktorin bringt ihre Idividualität und ihre Persönlichkeit in ihren Online Zumba® Kurs...</p>
+        <p>Jede unserer 13 Zumba® Instruktorinnen bringt ihren eigenen Stil und Musikgeschmack mit. Da ist für jeden das Richtige dabei.</p>
+        <p>Zumba®-Stream bietet Dir mit mehr als 200 Stunden Zumba® Online Kursen eine riesen Auswahl, die Du immer kostenlos testen kannst. Suche Dir deinen Zumba® Online Kurs aus und fang' an zu trainieren.</p>
+        <p>Der Spaß an Bewegung und gute Laune beim Tanzen ist uns wichtig. Unsere Online Zumba® Kurse werden von der Individualität und Persönlichkeit unserer Trainerinnen geprägt. Lerne sie kennen:</p>
     </Wrapper>
+    <BackgroundImg
+    backgroundImgClass="color-patch--orange-left">
     <Wrapper
-    wrapperClass="wrapper">
+    wrapperClass="wrapper--smaller">
         <About
         />
     </Wrapper>
+</BackgroundImg>
 </Section>
 
 <Section
-heading="Einen Marathon laufen ohne Lauftraining"
-paddingClass="padding--120"
+heading="Einen Marathon laufen <span class='text--colored'>ohne Lauftraining</span>"
 >
 <Wrapper
 wrapperClass="wrapper--smaller">
@@ -57,17 +66,17 @@ wrapperClass="wrapper--smaller">
 <p>Klar.</p> 
 <p>Ich wollte fit bleiben und nicht zunehmen. Aber so richtig Spaß hatte ich nicht.</p>
 <p>Das einzige, was mich begeistert hat, ist das Tanzen. Aber ohne Tanzpartner?</p>
-<p>2011 hat mich eine Freundin zu Zumba® mitgenommen und ich habe es geliebt. Das hatte ich mein Leben lang gesucht: Die Verbindung zwischen Tanzen und Fitness auf mega-gute-Laune Latin Music. Zumba® ist wie eher eine Party als eine Trainingseinheit. Die Stunde vergeht wie im Flug, und egal, wie der Tag gewesen ist - man hat danach gute Laune!</p>
-<p>Zumba® hat mich inspiriert und glücklich gemacht, dass ich im Jahr 2013 selbst Instructor geworden bin. Ich wollte einfach anderen dieses Glücksgefühl weitergeben.</p>
+<p>2011 hat mich eine Freundin zum Zumba® mitgenommen und ich habe es geliebt. Das hatte ich mein Leben lang gesucht: Die Verbindung von Tanzen und Fitness mit mega-gute-Laune Latin Music. Zumba® ist eher wie eine Party als eine Trainingseinheit. Die Stunde vergeht wie im Flug, und egal, wie der Tag gewesen ist - man hat danach gute Laune!</p>
+<p>Zumba® hat mich inspiriert und glücklich gemacht, so dass ich im Jahr 2013 selbst Instructor geworden bin. Ich wollte einfach anderen dieses Glücksgefühl weitergeben.</p>
 <p>Durch Zumba® wurde ich so fit wie noch nie! Komplett ohne Fitnessstudio und andere Sporteinheiten. Zumba® gibt mir einfach alles, was ich körperlich (und seelisch) brauche!</p>
 <p>Ich bin sogar, ohne ein einziges Mal Joggen zu gehen, einen Marathon in 4 Stunden 29 Minuten gelaufen! 3x Zumba® pro Woche hat gereicht!</p>
 <Grid 
-gridColumnClass="grid-2fr"
+gridColumnClass="grid-3fr"
 >
 <BlogImage 
 img={{
-    src:'/images/marathon.webp',
-    alt:'Marathon Medaille'
+    src:'/images/marathon-run.webp',
+    alt:'Kristina rennt'
 }}
 />
 <BlogImage 
@@ -76,8 +85,14 @@ img={{
     alt:'Kristina läuft ins Ziel ein'
 }}
 />
+<BlogImage 
+img={{
+    src:'/images/marathon.webp',
+    alt:'Marathon Medaille'
+}}
+/>
 </Grid>
-<p>Die größte Herausforderung für mich war die Zeit nach meiner Schwangerschaft. Ich hatte, trotz Zumba® bis in den 7. Monat, 22 Kilo zugenommen. Ich habe gezweifelt, ob ich mein Wohlfühlgewicht erreiche würde.</p>
+<p>Die größte Herausforderung für mich war die Zeit nach meiner Schwangerschaft. Trotz Zumba® bis in den 7. Monat, hatte ich 22 Kilo zugenommen. Ich habe gezweifelt, ob ich mein Wohlfühlgewicht erreichen würde. Mit Zumba® habe ich es geschafft.</p>
 <Grid 
 gridColumnClass="grid-2fr"
 >
@@ -99,25 +114,28 @@ img={{
 
 
 <!-- TEAM MEMBERS -->
+<BackgroundImg
+backgroundImgClass="color-patch--purple-opacity-top">
 <Section
-paddingClass="padding--120"
-heading="Unser Team">
+heading="Lerne Deine <span class='text--colored'>Zumba® Trainerinnen</span> kennen">
     <Wrapper 
     wrapperClass="wrapper"
     >
     <Grid 
-    gridColumnClass="grid-4fr">
+    gridColumnClass="grid-3fr">
 <TeamMember 
 backgroundImgClass="team-member-1"
 name="Svetlana"
 type="Online"
+instaProfile="https://www.instagram.com/zumbastar77/"
+text="Seit 2016 bin ich Zumba® Instructor. Andere sagen über mich, ich bin eine echte Sportgranate. Zumba® Online ist für mich Entspannung, denn mit STRONG™ Nation gehe ich mit dir an Deine Grenzen! Mit meinen zwei Töchtern trainiere ich fast täglich, um fit und gesund zu sein. Lass‘ uns zusammen rocken!  <br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/svetlana' target='_blank'>Svetlana’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=25328' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 iconStrong={{
     src:'/images/strong-icon.webp',
-    alt:'Zumba Strong Icon'
+    alt:'STRONG™ Nation Icon'
 }}
 />
 
@@ -125,9 +143,15 @@ iconStrong={{
 backgroundImgClass="team-member-2"
 name="Lisa Maria"
 type="Online"
+instaProfile="https://www.instagram.com/zumba_by_lisa_maria/"
+text="Ich kann es kaum erwarten, mit dir gemeinsam die Zumba® Dance Workouts zu rocken! Seit 2020 bin ich Zumba® Instructorin. Ich bin für Zumba® Toning und Zumba® Kids qualifiziert. Bei Zumba® Music stehe ich auf Dance Monkey, Tones and I, Mambo Salsa BIP und The Road Machel Montano. Besonders lateinamerikanische Rhythmen bringen Dich in meinen Online Zumba® Stunden zum Schwitzen! <br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/lisa-maria#' target='_blank'>Lisa Marias’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27072' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
+}}
+iconToning={{
+    src:'/images/toning-icon.webp',
+    alt:'Zumba® Toning Icon'
 }}
 />
 
@@ -135,13 +159,15 @@ iconFitness={{
 backgroundImgClass="team-member-3"
 name="Maria Laura"
 type="Online"
+instaProfile="https://www.instagram.com/marialauralopez/"
+text="Ich stamme aus Bolivien und freue mich meine Leidenschaft für Zumba® Online mit dir zu teilen! Ob zu ABBA, Musik der 80er, 90er oder von heute kombiniert mit Merengue, Salsa, Bachata, Du wirst Deine wahre Freude haben! Mit meiner STRONG™ Nation Lizenz kombiniere ich das Beste aus Zumba® und HIIT-Training, um dir ein intensives und abwechslungsreiches Workout zu bieten.<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/maria-laura' target='_blank'>Marias’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=25330&_ga=2.261955978.60678324.1668858267-1166895404.1668443299' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 iconStrong={{
     src:'/images/strong-icon.webp',
-    alt:'Zumba Strong Icon'
+    alt:'Zumba® Strong Icon'
 }}
 />
 
@@ -149,9 +175,10 @@ iconStrong={{
 backgroundImgClass="team-member-4"
 name="Lisa"
 type="Online"
+text="Ob K-Pop, 80er, 90er oder lateinamerikanische Zumba® Rhytmen, bei mir bekommst Du Abwechslung. Den Stress des Alltags einfach abtanzen, das ist mein Ziel und das erreichen wir gemeinsam mit Zumba® Online!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/lisa' target='_blank'>Lisa’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27071&_ga=2.261955978.60678324.1668858267-1166895404.1668443299' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -159,9 +186,11 @@ iconFitness={{
 backgroundImgClass="team-member-5"
 name="Lydia"
 type="Online"
+instaProfile="https://www.instagram.com/lyydie_/"
+text="Stress abbauen, und einfach das Wohlbefinden insgesamt verbessern. Das ist für mich Zumba® Online. Stell' Dir vor, wie Du Dich nach einer Zumba® Online Stunde voller Energie und guter Laune fühlen wirst. Das stelle ich mir immer vor, wenn ich gerade keine Lust habe, mich aufzuraffen. Es lohnt sich! Einfach loslegen.<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/lydia' target='_blank'>Lydia’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27069' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -169,9 +198,11 @@ iconFitness={{
 backgroundImgClass="team-member-6"
 name="Nadine"
 type="Online"
+instaProfile="https://www.instagram.com/nnadine_fitness/?hl=de"
+text="Ich komme aus Kuba und freue mich, mit Dir zu lateinamerikanischer Musik beim Zumba® Online zu tanzen. Mit einfachen Choreografien und dem Fokus auf Koordination, wirst Du nach jeder Stunde glücklicher und ausgeglichener sein. Hol' Dir Deinen Urlaub vom Alltag nach Hause - mit Zumba® Online.<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/nadine' target='_blank'>Nadine’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27078' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -179,9 +210,19 @@ iconFitness={{
 backgroundImgClass="team-member-7"
 name="Kathrin"
 type="Online"
+instaProfile="https://www.instagram.com/kaylindamou/"
+text="Ich bin seit 2011 Zumba® Instructor und liebe es, Zumba® Kurse zu geben. Ich habe die Lizenz für Zumba® Fitness, Zumba® Toning und STRONG™ Nation. Damit bringe ich Dich an Dein Limit! Besonders meine 'MIX Stunden' aus Zumba® Toning und STRONG™ Nation werden Dich fordern. Du verlässt meine Stunde mit einem positiven Feeling, wovon du noch Tage zehren wirst! Ich freue mich darauf, mit Dir beim Zumba® Online zu tanzen und zusammen Spaß zu haben!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/kathrin' target='_blank'>Kathrin’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27076' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
+}}
+iconToning={{
+    src:'/images/toning-icon.webp',
+    alt:'Zumba® Toning Icon'
+}}
+iconStrong={{
+    src:'/images/strong-icon.webp',
+    alt:'STRONG™ Nation Icon'
 }}
 />
 
@@ -189,9 +230,11 @@ iconFitness={{
 backgroundImgClass="team-member-8"
 name="Liejing"
 type="Online"
+instaProfile="https://www.facebook.com/liejing.pan"
+text="Ich komme aus China und ich freue mich, wenn Du mit meinen Zumba® Online Stunden Spaß hast und Dich fitter und gesünder tanzt. Meine Lieblingsmusik ist Bollywood Dance & Hip Hop. Wenn Du auch darauf stehst, dann sind meine einfachen Coreos genau das Richtige, um in Schwung zu kommen!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/liejing' target='_blank'>Liejing’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27070' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -199,9 +242,11 @@ iconFitness={{
 backgroundImgClass="team-member-9"
 name="Alicia"
 type="Online"
+instaProfile="https://www.instagram.com/ms_sally_sky/"
+text="Ich nehme Dich in meinen Zumba® Online Stunden gerne mit 'back to the 80s and 90s'. Ich steh‘ einfach auf Boygroups, deswegen ist bei mir immer was aus den 90ern dabei… Für alle Teilnehmerinnen beim Zumba® Online sage ich: Zuerst die Füße, dann die Hände und der Spaß ist immer dabei!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/alicia' target='_blank'>Alicia’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=25329' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -209,9 +254,11 @@ iconFitness={{
 backgroundImgClass="team-member-10"
 name="Lena"
 type="Online"
+instaProfile="https://www.instagram.com/zumba_by_lena/"
+text="Bist Du bereit für ein Workout, das sich nach mehr Spaß anfühlt als nach Arbeit? Richtige Party? Steig' online zu meinen Zumba® Fitness-Stunden ein und verbrenne Kalorien, ohne es zu merken. Tanze zu aufregender Musik und vergiss den Alltag. Ich freu‘ mich, mit Dir Zumba® Online zu erleben! <br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/lena' target='_blank'>Lena’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27077' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
@@ -219,22 +266,59 @@ iconFitness={{
 backgroundImgClass="team-member-11"
 name="Victoria"
 type="Online"
+instaProfile="https://www.instagram.com/vixintriago521dance/"
+text="Hey! Ich liebe lateinamerikanische Zumba® Musik. Zumba® Online finde ich super, weil man auch mal spät abends tanzen kann, wenn gerade kein Kurs angeboten wird. Mit Zumba® Online kannst Du bequem von zu Hause zu meinen Choreos tanzen. Ich freu‘ mich, wenn Du mit meinen Stunden den Alltag weg tanzen kannst!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/victoria' target='_blank'>Victoria’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=27068' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
 }}
 />
 
 <TeamMember 
 backgroundImgClass="team-member-12"
-name="Kristina"
+name="Julia"
 type="Online"
+instaProfile="https://www.instagram.com/zumbamainz.de/"
+text="Ich habe als Teilnehmerin meine Liebe zum Zumba®️ entdeckt. Endlich kann ich auch als Instructorin meine Leidenschaft weitergeben. Latino-Songs dürfen in meinen Playlisten nicht fehlen. Mit einfachen Choreos kommst Du auch als Einsteiger auf Deine Kosten. Wir sehen uns beim Zumba! <br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/julia target='_blank'>Julia’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=43595' target='_blank'>Zumba® Online Kurse</a>"
 iconFitness={{
     src:'/images/fitness-icon.webp',
-    alt:'Zumba Fitness Icon'
+    alt:'Zumba® Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-13"
+name="Anne-Sophie"
+type="Online"
+instaProfile="https://www.instagram.com/lnsx.a/"
+text="Ich habe mich als Teilnehmerin bei Lena, Kristina und Co. ausgepowert. Im April 2022 bin ich selbst Zumba® Instructorin geworden. Wenn Du Lust auf abwechslungsreiche Choreos und eine Menge Spaß beim Tanzen hast, dann schau‘ in meine Zumba® Stunden rein. Zumba®️ ist meine Gute-Laune-Droge für jeden Tag. Mein Musikstil ist ein Mix aus den Zumba®️ Klassikern und Latin-Pop. Hauptsache gute Laune und Schwitzen! <br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/anne-sophie' target='_blank'>Anne-Sophie’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=33193' target='_blank'>Zumba® Online Kurse</a>"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba® Fitness Icon'
+}}
+/>
+
+<TeamMember 
+backgroundImgClass="team-member-14"
+name="Kristina"
+type="Online"
+instaProfile="https://www.instagram.com/zumbamainz.de/"
+text="Ich bin seit 2013 Zumba® Instructor. Mit Zumba® habe ich mein Wohlfühlgewicht erreicht. Ich bin glücklicher und ausgeglichener als vorher. Die Energie und Lebensfreude, die ich durch Zumba® gewonnen habe, gebe ich bei Zumba® Online weiter. Ich habe Zumba®-Stream entwickelt, um von überall auf der Welt zu jeder Zeit Zumba® Online Stunden machen zu können. Mit <a class='link' href='https://zim.uscreen.io/categories/zypern-zumba' target='_blank'>Zumba® Urlaubsfeeling</a> werden wir uns an Stränden und unter Palmen gemeinsam auspowern!<br><br> Geh zu <a class='link' href='https://zim.uscreen.io/programs/zumba-online-kristina-collection' target='_blank'>Kristina’s Collection</a> und <a class='link' href='https://zim.uscreen.io/catalog/search?catalog_filter_4746=25327' target='_blank'>Zumba® Online Kurse</a>"
+iconFitness={{
+    src:'/images/fitness-icon.webp',
+    alt:'Zumba® Fitness Icon'
+}}
+iconToning={{
+    src:'/images/toning-icon.webp',
+    alt:'Zumba® Toning Icon'
+}}
+iconStrong={{
+    src:'/images/strong-icon.webp',
+    alt:'STRONG™ Nation Icon'
 }}
 />
 </Grid>
 </Wrapper>
 </Section>
+</BackgroundImg>
 </MainLayout>

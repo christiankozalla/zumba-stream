@@ -14,8 +14,16 @@ import Section from '../../components/Section.astro';
 
 
 <MainLayout
-title="Blog by Salsa Dance Studio"
-description="" 
+title="Blog by Zumba® -Stream"
+description="Ein Blog über Zumba®." 
+opengraph={{
+	title:'Blog über Zumba®',
+	url:'https://www.zumba-stream.com/blog/',
+	image:'https://www.zumba-stream.com/images/blog-opengraph.jpg',
+	type:'website',
+	description:'Lerne mehr über Zumba®',
+	locale:'de'
+}}
 >
 <HeroShot 
 img={{
@@ -41,9 +49,9 @@ displayClass="hidden"
                                 <img class="blog-card__img" src={urlForImage(post.mainImage).url()}  alt={ post.alt }>
                             <div class="blog-card__meta">
                                 <p class="blog-card__date  p--no-margin">{ new Date(post.publishedAt).toLocaleDateString("de-DE")}</p>
-                                {Array.isArray(post.categories) && <h6 class="blog-card__category  link">{ post.categories.map((category) => { 
+                                {Array.isArray(post.categories) && <p class="blog-card__category  link  p--no-margin">{ post.categories.map((category) => { 
                                     return <span>{ category.title || ''}</span>
-                                }) }</h6>}
+                                }) }</p>}
                             </div>
                             <h4 class="blog-card__heading">{ post.title }</h4>
                             <p class="blog-card__description">{ post.description }</p>
@@ -69,6 +77,7 @@ displayClass="hidden"
         display: grid;
         grid-template-columns: 1fr;
         gap: 3em;
+        margin: 0 2em;
     }
 
     .blog__list-items {
@@ -87,6 +96,10 @@ displayClass="hidden"
         pointer: cursor;
     }
 
+    .blog-card__img {
+        border-radius: var(--border-radius);
+    }
+
     .blog-card__meta {
         display: flex;
         gap: 1em;
@@ -94,12 +107,12 @@ displayClass="hidden"
     }
 
     .blog-card__category {
-		font-size: var(--fs-xs);
+		font-size: var(--fs-300);
         color: var(--black-color);
     }
 
     .blog-card__date {
-        font-size: var(--fs-xs);
+        font-size: var(--fs-300);
         color: var(--black-color);
     }
 
