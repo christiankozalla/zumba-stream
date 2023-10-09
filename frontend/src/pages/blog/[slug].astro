@@ -5,7 +5,7 @@ import HeroShot from '../../components/HeroShot.astro';
 
 
 //import sanity
-import { useSanityClient } from '@sanity/astro';
+import { sanityClient } from 'sanity:client';
 import { urlForImage } from '../../lib/urlForImage';
 import PortableText from '../../components/PortableText.astro';
 import Wrapper from '../../components/Wrapper.astro';
@@ -14,7 +14,7 @@ import Wrapper from '../../components/Wrapper.astro';
 
 
 export async function getStaticPaths() {
-  const posts = await useSanityClient().fetch(`*[_type == "post"]{..., author->}`);
+  const posts = await sanityClient.fetch(`*[_type == "post"]{..., author->}`);
   return posts
     .map((post) => {
       return post.slug?.current
@@ -68,7 +68,7 @@ subheading={ description }
     </div>
     <div class="post">
     <PortableText portableText={body}/>
-    <!--
+    
     <div class="post-author__container">
       <div>
       <img class="post-author__img" src={urlForImage(author.image).url()} />
@@ -77,7 +77,7 @@ subheading={ description }
     <div class="post-author__text">
      <PortableText portableText={author.bio} />
     </div>
-     -->
+    
   </div>
   </Wrapper>
 

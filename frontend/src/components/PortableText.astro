@@ -1,25 +1,11 @@
 ---
 import { PortableText as PortableTextInternal } from "astro-portabletext"
-import { urlForImage } from '../lib/urlForImage';
+import SanityImage from "./SanityImage.astro";
 const { portableText } = Astro.props;
 
 const components = {
-  types: {
-    image: ({ value }) => {
-      return `
-        <picture>
-          <source
-            srcset="${urlForImage(value.asset).format('webp').url()}"
-            type="image/webp"
-          />
-          <img
-            class="responsive__img"
-            src="${urlForImage(value.asset).url()}"
-            alt="${value.alt}"
-          />
-        </picture>
-      `;
-    },
+  type: {
+    image: SanityImage,
   },
 };
 ---
