@@ -17,11 +17,12 @@ if (array_key_exists('email', $_POST)) {
     // Validate the form data here if needed
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $message = htmlspecialchars($_POST['message']);
+    $topic = htmlspecialchars($_POST['topic']);
 
 
     $from = 'dance@zumba-stream.com';
 
-    $to = 'mail@dahub.de';
+    $to = 'christian.kozalla@gmail.com'; // 'mail@dahub.de';
     $subject = 'Nachricht vom Kontakformular der Website zumba-stream.com';
 
     

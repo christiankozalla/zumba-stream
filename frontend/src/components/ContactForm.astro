@@ -1,18 +1,50 @@
----
-const { heading, text } = Astro.props;
----
-
-
-
 <form class="form__container">
-        <label class="form__label" for="email">E-Mail</label>
-        <input class="form__input" id="email" name="email" placeholder="z.B. email@example.com">
-        <label class="form__label" for="topic">Thema</label>
-        <input class="form__input" id="message" name="message" placeholder="z.B. Hilfe beim Abo">
-        <label class="form__label" for="message">Wie können wir dir helfen?</label>
-        <textarea class="form__input" id="message" name="message" placeholder="Worum geht's?"></textarea>
-        <input class="form__button" type="submit" value="Nachricht senden">
+    <label class="form__label" for="email">E-Mail</label>
+    <input class="form__input" id="email" name="email" placeholder="z.B. email@example.com">
+    <label class="form__label" for="topic">Thema</label>
+    <input class="form__input" id="topic" name="topic" placeholder="z.B. Hilfe beim Abo">
+    <label class="form__label" for="message">Wie können wir dir helfen?</label>
+    <textarea class="form__input" id="message" name="message" placeholder="Worum geht's?"></textarea>
+    <p id="form-response">&nbsp;</p>
+    <input class="form__button" id="submit" type="submit" value="Nachricht senden">
 </form>
+
+<script>
+    const form = document.querySelector("form");
+    const submitButton = document.querySelector("#submit") as HTMLButtonElement;
+    const formResponse = document.querySelector("#form-response") as HTMLElement;
+
+    form.addEventListener("submit", (e: Event & { currentTarget: HTMLFormElement}) => {
+    e.preventDefault();
+    submitButton.disabled = true;
+    const formData = new FormData(e.currentTarget);
+    fetch("/contact-form-handler/", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => {
+        formResponse.classList.remove(...formResponse.classList);
+        if (response.status === 201) {
+            formResponse.innerText = "Vielen Dank für deine Nachricht!";
+            formResponse.classList.add("success");
+            form.reset(); 
+        } else if (response.status === 400) {
+            formResponse.innerText = "Bitte gib deine E-Mail ein.";
+            formResponse.classList.add("error");
+        } else if (response.status === 500 || response.status === 404) {
+            formResponse.innerText = "Senden der Nachricht fehlgeschlagen...";
+            formResponse.classList.add("error");
+        }
+        })
+        .catch((_response) => {
+            formResponse.innerText = "Senden der Nachricht fehlgeschlagen...";
+            formResponse.classList.add("error");
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+        });
+    });
+</script>
 
 <style>
 
