@@ -22,7 +22,7 @@ if (array_key_exists('email', $_POST)) {
 
     $from = 'dance@zumba-stream.com';
 
-    $to = 'christian.kozalla@gmail.com'; // 'mail@dahub.de';
+    $to = 'mail@dahub.de';
     $subject = 'Nachricht vom Kontakformular der Website zumba-stream.com';
 
     
