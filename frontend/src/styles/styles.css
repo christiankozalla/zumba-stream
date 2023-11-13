@@ -224,8 +224,20 @@ video {
     margin: 0;
 }
 
+.p--crossedout {
+    text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
 .flex {
     display: flex;
+}
+
+.flex--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
 
 .flex--align-right {
@@ -352,4 +364,51 @@ video {
         color: #fff;
         transition-delay: 0.2s;
         transition-timing-function: linear;
+      }
+
+      /* #TOGGLE PRICE PAGE */
+
+      .toggle__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .toggle__container input {
+        display: none;
+      }
+      .toggle__container label {
+        border-radius: var(--border-radius);
+        height: 2em;
+        width: 4em;
+        border: 1px solid var(--first-color);
+        cursor: pointer;
+        position: relative;
+        margin: 0 0.4em;
+      }
+
+      .toggle__container .label .selected {
+        position: absolute;
+        left: 3px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 90%;
+        width: 45%;
+        background-color: var(--first-color);
+        border-radius: 50%;
+        transition: all 0.3s ease-in;
+      }
+
+      .label.active .selected {
+        left: 2em;
+        background-color: var(--fourth-color);
+      }
+
+      #price__card .price {
+        display: none;
+      }
+
+      #price__card .price .price__selected {
+        display: block;
       }

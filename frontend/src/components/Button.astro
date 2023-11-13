@@ -6,7 +6,7 @@ btn__container
 ${alignClass}
 `}>
 { btn &&
-(<a class="btn" href={ btn.href }>{ btn.text }</a>)
+(<a class="btn" href={ btn.href } set:html={ btn.text } />)
 }
 </div>
 <style>
@@ -23,6 +23,7 @@ ${alignClass}
         border-radius: var(--border-radius);
         text-decoration: none;
         font-weight: bold;
+        text-align: center;
     }
 
     .btn:hover {

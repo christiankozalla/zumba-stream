@@ -6,6 +6,7 @@ import Wrapper from "../components/Wrapper.astro";
 import PriceCard from "../components/PriceCard.astro";
 import Button from "../components/Button.astro";
 import HeroShot from "../components/HeroShot.astro";
+import GhostButton from "../components/GhostButton.astro";
 
 ---
 
@@ -22,132 +23,113 @@ opengraph={{
 }}
 >
 <HeroShot
-heading="Preise für Online Zumba®-Stream"
+heading="Erst 14 Tage testen. Dann zahlen."
 displayClass="hidden"
 />
     <Section>
     <Wrapper
     wrapperClass="wrapper">
+
         <Grid
         gridColumnClass="grid-3fr">
+        <div class="row--2">
         <PriceCard 
-        heading="Dein Einstieg"
-        subheading="unverbindlich"
-        oldPrice="34,99 €"
-        newPrice="9,99 € / Monat"
+        heading="Starter"
+        subheading="Frei für immer"
+        oldPrice=""
+        selectedPrice="0 €"
+        price=""
         listItems={[
-            "7 Tage gratis testen",
-            "neue Videos jede Woche",
             "keine Laufzeit",
-            "über 34 Stunden Zumba® Fitness, Zumba® Toning & STRONG™ Nation",
-            "13 lizensierte Trainer"
+            "10 Stunden Zumba® Online",
+            "Zumba Grundschritte",
+            "Anfänger Workout",
+            "Keine Laufzeit"
         ]}
-        >
-        <Button 
-        alignClass="btn--center"
-        btn={{
-            href:'https://zim.uscreen.io/orders/customer_info?o=84206',
-            text:'Jetzt testen'
-        }} />
+         listItemsExtra={[
+            ]}
+            borderClass="price-card__border--left"
+            btn={{
+                href:'',
+                text:'Jetzt loslegen'
+            }}
+            >
         </PriceCard>
-        
-        <PriceCard 
-        heading="Monats-Abo"
-        subheading="Flexibel"
-        oldPrice="34,99 €"
-        newPrice="24,99 € / Monat"
-        listItems={[
-            "7 Tage gratis testen",
-            "regelmäßig neue Workouts",
-            "Laufzeit einen Monat",
-            "Wert mehr als 4240 €",
-            "200+ Stunden Zumba® Online",
-            "500+ Stunden Repertoire",
-            "Zumba® Fitness 140+ Stunden", 
-            "Zumba® Toning 25+ Stunden",
-            "Urlaubsfeeling 28+ Stunden",
-            "STRONG™ Nation 24+ Stunden",
-            "STRONG 30™ 9 Stunden",
-            "Specials 6+ Stunden",
-            "13 lizensierte Trainer",
-            "Übertragung auf TV möglich",
-            "flexible Laufzeit/monatlich kündbar",
-            "ohne Vorkenntnisse starten"
-        ]}
-        >
-        <Button 
-        alignClass="btn--center"
-        btn={{
-            href:'https://zim.uscreen.io/orders/customer_info?o=78651',
-            text:'Jetzt testen'
-        }} />
-        </PriceCard>
-        
-        <PriceCard 
-        heading="Jahres-Abo"
-        subheading="58% sparen"
-        oldPrice="34,99 €"
-        newPrice="14,99 € / Monat"
-        listItems={[
-           "7 Tage gratis testen",
-            "regelmäßig neue Workouts",
-            "Laufzeit ein Jahr",
-            "Wert mehr als 4240 €",
-            "200+ Stunden Zumba® Online",
-            "500+ Stunden Repertoire",
-            "Zumba® Fitness 140+ Stunden", 
-            "Zumba® Toning 25+ Stunden",
-            "Urlaubsfeeling 28+ Stunden",
-            "STRONG™ Nation 24+ Stunden",
-            "STRONG 30™ 9 Stunden",
-            "Specials 6+ Stunden",
-            "13 lizensierte Trainer",
-            "Übertragung auf TV möglich",
-            "flexible Laufzeit/monatlich kündbar",
-            "ohne Vorkenntnisse starten",
-            "Einmalzahlung für ein Jahr (179,99 €)"
-        ]}
-        >
-        <Button
-        alignClass="btn--center" 
-        btn={{
-            href:'https://zim.uscreen.io/orders/customer_info?o=77420',
-            text:'Jetzt testen'
-        }} />
-        </PriceCard>
-        
-        <PriceCard 
-        heading="VIP-Abo"
-        subheading="Individuell"
-        oldPrice="119,99 €"
-        newPrice="99,99 € / Monat"
-        listItems={[
-            "4 online Privatstunden im Monat mit Kristina",
-            "Mindestlaufzeit 3 Monate",
-            "individuelle Beratung, um Deine Ziele zu erreichen",
-            "persönliche, auf Deine Vorlieben abgestimmte Stunden",
-            "200+ Stunden Zumba® Online",
-            "500+ Stunden Repertoire",
-            "Zumba® Fitness 140+ Stunden", 
-            "Zumba® Toning 25+ Stunden",
-            "Urlaubsfeeling 28+ Stunden",
-            "STRONG™ Nation 24+ Stunden",
-            "STRONG 30™ 9 Stunden",
-            "Specials 6+ Stunden",
-            "13 lizensierte Trainer",
-            "Übertragung auf TV möglich",
-            "ohne Vorkenntnisse starten"
-        ]}
-        >
-        <Button 
-        alignClass="btn--center"
-        btn={{
-            href:'https://zim.uscreen.io/orders/customer_info?o=138160',
-            text:'Jetzt kaufen'
-        }} />
-        </PriceCard>
+        </div>
+        <div class="toggle__container  col--span-3">
+            <p>jährlich</p>
+            <input type="checkbox" id="checkbox" >
+            <label class="label" for="checkbox"><div class="selected"></div></label>
+            <p>monatlich</p>
+        </div>
+        <div class="row--2">
+            <div class="price__box">
+                <div class="price__card" id="price__card">
+                    <PriceCard 
+                    heading="Premium Abo"
+                    subheading="monatlich oder jährlich"
+                    oldPrice="24,99 €"
+                    selectedPrice="ab 9,99 € / Monat"
+                    price="24,99 €"
+                    listItems={[
+                        "regelmäßig neue Workouts",
+                        "13 lizensierte Trainer",
+                        "200+ Stunden Zumba® Online",
+                        "Zumba® Fitness 140+ Stunden", 
+                        "Zumba® Toning 25+ Stunden",
+                        "STRONG™ Nation 24+ Stunden",
+                        "STRONG 30™ 9 Stunden",
+                        "500+ Stunden Repertoire",
+                        "Specials 6+ Stunden",
+                        "Übertragung auf TV möglich",
+                        "Urlaubsfeeling pur",
+                    ]}
+                    listItemsExtra={[
+                    ]}
+                    borderClass="price-card__border--center"
+                    btn={{
+                        href:'',
+                        text:'Jetzt loslegen'
+                    }}
+                    >
+                    </PriceCard>
+                 </div>
+            </div>
+        </div>
+        <div class="row--2">
+                <PriceCard 
+                heading="VIP-Abo"
+                subheading="Individuell"
+                oldPrice="119,99 €"
+                selectedPrice="99,99 € / Monat"
+                listItems={[
+                    "regelmäßig neue Workouts",
+                    "13 lizensierte Trainer",
+                    "200+ Stunden Zumba® Online",
+                    "Zumba® Fitness 140+ Stunden", 
+                    "Zumba® Toning 25+ Stunden",
+                    "STRONG™ Nation 24+ Stunden",
+                    "STRONG 30™ 9 Stunden",
+                    "500+ Stunden Repertoire",
+                    "Specials 6+ Stunden",
+                    "Übertragung auf TV möglich",
+                    "Urlaubsfeeling pur",
+                ]}
+                listItemsExtra={[
+                    "4 online Privatstunden im Monat mit Kristina",
+                    "Mindestlaufzeit 3 Monate",
+                    "individuelle Beratung, um Deine Ziele zu erreichen",
+                    "persönliche, auf Deine Vorlieben abgestimmte Stunden",
+                ]}
+                borderClass="price-card__border--right"
+                btn={{
+                    href:'',
+                    text:'Jetzt loslegen'
+                }}
+                >
+                </PriceCard>
+            </div>
         </Grid>
     </Wrapper>
 </Section>
-
 </MainLayout>

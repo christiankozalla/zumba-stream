@@ -33,6 +33,16 @@ url("./fonts/icofont.woff") format("woff");
   -webkit-font-smoothing: antialiased;
 }
 
+.icofont-check-circled:before
+{
+  content: "\eed7";
+}
+
+.icofont-instagram:before
+{
+  content: "\ed46";
+}
+
 .icofont-twitch:before
 {
   content: "\ed79";
@@ -43,24 +53,19 @@ url("./fonts/icofont.woff") format("woff");
   content: "\ed37";
 }
 
-.icofont-instagram:before
-{
-  content: "\ed46";
-}
-
 .icofont-youtube-play:before
 {
   content: "\ecbb";
 }
 
-.icofont-check-circled:before
+.icofont-plus-circle:before
 {
-  content: "\eed7";
+  content: "\efc0";
 }
 
-.icofont-location-pin:before
+.icofont-whatsapp:before
 {
-  content: "\ef79";
+  content: "\ed86";
 }
 
 .icofont-phone:before
@@ -71,66 +76,6 @@ url("./fonts/icofont.woff") format("woff");
 .icofont-email:before
 {
   content: "\ef12";
-}
-
-.icofont-whatsapp:before
-{
-  content: "\ed86";
-}
-
-.icofont-pinterest:before
-{
-  content: "\ed5d";
-}
-
-.icofont-close-circled:before
-{
-  content: "\eedd";
-}
-
-.icofont-close-line-circled:before
-{
-  content: "\eede";
-}
-
-.icofont-linkedin:before
-{
-  content: "\ed4d";
-}
-
-.icofont-twitter:before
-{
-  content: "\ed7a";
-}
-
-.icofont-circled-down:before
-{
-  content: "\ea6b";
-}
-
-.icofont-circled-up:before
-{
-  content: "\ea6e";
-}
-
-.icofont-rounded-down:before
-{
-  content: "\ea99";
-}
-
-.icofont-rounded-up:before
-{
-  content: "\eaa1";
-}
-
-.icofont-thin-down:before
-{
-  content: "\eac8";
-}
-
-.icofont-thin-up:before
-{
-  content: "\eacb";
 }
 
 [class^="icofont-"].icofont-duotone,

@@ -1,21 +1,29 @@
 ---
-const { heading, subheading, oldPrice = "", newPrice, listItems } = Astro.props;
+const { heading, subheading = "", oldPrice = "", price="", btn, selectedPrice, listItems, listItemsExtra, borderClass } = Astro.props;
 
 interface Props {
         listItems: string[];
+        listItemsExtra: string[];
         heading: string;
+        btn: string[];
         subheading: string;
         oldPrice: string;
-        newPrice: string;
+        selectedPrice: string;
+        price:string;
+        borderClass: string;
       }
 ---
 
-<div class="price-card__container">
+<div class={`
+price-card__container
+${borderClass}
+`}>
     <h4 class="p__align--center">{ heading }</h4>
     <h6 class="p__align--center">{ subheading }</h6>
     <div class="price__container">
     <h6 class="price--old">{ oldPrice }</h6>
-    <h5 class="price">{ newPrice }</h5>
+    <h5 class="price__selected">{ selectedPrice }</h5>
+    <h5 class="price">{ price }</h5>
   </div>
       
       <ul class="price-card__list">
@@ -27,7 +35,21 @@ interface Props {
               ))
             }
       </ul>
-  <slot />
+
+      <ul class="price-card__list  price-card__list--extra">
+        {
+            listItemsExtra.map((itemextra) => (
+              <li class="price-card__list-item"><i class="icofont-plus-circle  icofont-2x"></i></i>
+                {itemextra}
+              </li>
+            ))
+          }
+    </ul>
+    <div class="btn__container">
+      { btn &&
+      (<a class="btn" href={ btn.href } set:html={ btn.text } />)
+      }
+      </div>
 </div>
 
 <style>
@@ -35,8 +57,22 @@ interface Props {
 .price-card__container {
     border-radius: var(--border-radius);
     box-shadow: 12px 16px 20px #F6F7F8;
-    padding: 1.8em;
+    padding: 1.8em 1.8em 0 1.8em;
     background-color: #fff;
+    margin: 0 auto auto auto;
+}
+
+.price-card__border--left {
+    border: 1px solid var(--first-color);
+}
+
+.price-card__border--center {
+  border: 1px solid #fcd2eb;
+  background-color: #fcd2eb;
+}
+
+.price-card__border--right {
+  border: 1px solid var(--first-color);
 }
 
 .price__container {
@@ -44,6 +80,7 @@ interface Props {
 }
 
 .price,
+.price__selected,
 .price--old {
   color: var(--first-color);
   text-align: center;
@@ -64,10 +101,39 @@ interface Props {
   display: flex;
 }
 
-.icofont-check-circled {
+.icofont-check-circled,
+.icofont-plus-circle {
   color: var(--first-color);
   display: flex;
   margin-right: 0.4em;
 }
 
+.btn__container {
+    margin: 2em auto 3em auto;
+    display: flex;
+    justify-content: center;
+    }
+
+    .btn {
+        border: 1px solid var(--first-color);
+        background-color: var(--first-color);
+        color: #fff;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #fff;
+        color: var(--first-color);
+    }
+
+    .btn--center {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
 </style>
+<script src="./toggle.js"></script>
