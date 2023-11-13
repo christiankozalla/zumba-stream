@@ -1,19 +1,16 @@
-const checkbox = document.querySelector('#checkbox');
+const checkbox = document.querySelector('#price-toggle');
 const label = document.querySelector('.label');
 
-checkbox.addEventListener('change', showPlan);
+checkbox.addEventListener('change', togglePrices);
 
-function showPlan () {
+function togglePrices(e) {
     label.classList.toggle('active');
     checkbox.classList.toggle('active');
-    displayPrice();
+
+    const showYearlyPrices = e.target.checked;
+    if (showYearlyPrices) {
+        document.body.classList.add("show-yearly-prices");
+    } else {
+        document.body.classList.remove("show-yearly-prices");
+    }
 }
-
-function displayPrice() {
-    const prices = document.querySelectorAll('.price');
-
-    prices.forEach(item=>{
-        item.classList.toggle('.price__selected');
-    })
-}
-
