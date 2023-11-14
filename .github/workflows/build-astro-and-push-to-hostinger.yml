@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FRONTEND_PATH: "./frontend" # default value when not using subfolders
+  FRONTEND_PATH: "./frontend"
 
 jobs:
   build:
@@ -61,8 +61,6 @@ jobs:
         run:  ${{ steps.detect-package-manager.outputs.runner }} astro build
       - name: Deploy to VPS
         id: deployment
-        # directory in the server /var/www/sites/<GH_USER_NAME>/<REPO_NAME>/production
-        working-directory: ${{ env.BUILD_PATH }}
         shell: bash
         run: |
           which ssh-agent || ( apt-get install -qq openssh-client )
@@ -70,5 +68,5 @@ jobs:
           mkdir -p ~/.ssh
           ssh-add <(echo "${{ secrets.GH_DEPLOY_KEY }}")
           echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-          echo "${{ env.BUILD_PATH }}/dist/"
-          rsync -a -e 'ssh -p 65002' --delete --exclude='videos' --exclude='vendor' --exclude='.htaccess' ${{ env.BUILD_PATH }}/dist/ ${{ secrets.HOSTINGER_HOST }}:public_html
+          echo "${{ env.FRONTEND_PATH }}/dist/"
+          rsync -a -e 'ssh -p 65002' --delete --exclude='videos' --exclude='vendor' --exclude='.htaccess' ${{ env.FRONTEND_PATH }}/dist/ ${{ secrets.HOSTINGER_HOST }}:public_html
