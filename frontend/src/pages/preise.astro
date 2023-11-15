@@ -38,7 +38,7 @@ import HeroShot from "../components/HeroShot.astro";
                 <p>Monatlich</p>
             </div>
             <Grid gridColumnClass="grid-3fr">
-                <div class="row--2">
+                <div class="price__card--row-3">
                     <PriceCard
                         heading="Starter"
                         subheading="+6 Stunden Zumba® Online. Frei für immer."
@@ -63,12 +63,12 @@ import HeroShot from "../components/HeroShot.astro";
                             text: "Jetzt loslegen",
                         }}
                         btnYearly={{
-                            href: "",
-                            text: "Yearly",
+                            href: "https://zim.uscreen.io/orders/customer_info?o=142557",
+                            text: "Jetzt loslegen",
                         }}
                     />
                 </div>
-                <div class="row--2">
+                <div class="price__card--row-1">
                     <div class="price__box">
                         <div class="price__card">
                             <PriceCard
@@ -77,7 +77,7 @@ import HeroShot from "../components/HeroShot.astro";
                                 subheading="200+ Stunden Zumba® Online. Monatlich oder jährlich abonnieren."
                                 monthlyPrices={{
                                     oldPrice: "24,99 €",
-                                    price: "die ersten 3 Monate 9,99 € danach 24,99 €",
+                                    price: "9,99 € in den ersten 3 Monaten, danach 24,99 € / Monat",
                                 }}
                                 yearlyPrices={{
                                     oldPrice: "179,99 €",
@@ -101,18 +101,18 @@ import HeroShot from "../components/HeroShot.astro";
                                 displayUlClass="hidden"
                                 borderClass="price-card__border--center"
                                 btnMonthly={{
-                                    href: "https://zim.uscreen.io/checkout/new?o=78651&d=ZUMBASTART", // https://zim.uscreen.io/checkout/new?o=77420&d=YEARLYPREMIUM
-                                    text: "Jetzt kostenlos testen", // Dieses Angebot ist doch gar nicht kostenlos, oder?
+                                    href: "https://zim.uscreen.io/checkout/new?o=78651&d=ZUMBASTART",
+                                    text: "Jetzt kostenlos testen",
                                 }}
                                 btnYearly={{
-                                    href: "",
-                                    text: "Yearly",
+                                    href: "https://zim.uscreen.io/checkout/new?o=77420&d=YEARLYPREMIUM",
+                                    text: "Jetzt kostenlos testen",
                                 }}
                             />
                         </div>
                     </div>
                 </div>
-                <div class="row--2">
+                <div class="price__card--row-2">
                     <PriceCard
                         heading="VIP-Abo"
                         subheading="Individuelle Betreuung"
@@ -146,8 +146,8 @@ import HeroShot from "../components/HeroShot.astro";
                             text: "Jetzt loslegen",
                         }}
                         btnYearly={{
-                            href: "",
-                            text: "Yearly",
+                            href: "https://zim.uscreen.io/checkout/new?o=138160&d=VIP",
+                            text: "Jetzt loslegen",
                         }}
                     />
                 </div>
@@ -181,7 +181,7 @@ import HeroShot from "../components/HeroShot.astro";
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 1em auto;
+        margin: 1em auto 1.8em auto;
     }
 
     .toggle__container input {
@@ -214,5 +214,33 @@ import HeroShot from "../components/HeroShot.astro";
         left: 2em;
         background-color: #fff;
         border: 2px solid var(--first-color);
+    }
+
+    .price__card--row-1 {
+        grid-row-start: 1;
+    }
+
+    .price__card--row-2 {
+        grid-row-start: 2;
+    }
+
+    .price__card--row-3 {
+        grid-row-start: 3;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .price__card--row-1,
+        .price__card--row-3 {
+        grid-row-start: 1;
+    }
+    }
+
+    
+    @media only screen and (min-width: 60em) {
+        .price__card--row-1,
+        .price__card--row-2,
+        .price__card--row-3 {
+        grid-row-start: 1;
+    }
     }
 </style>
