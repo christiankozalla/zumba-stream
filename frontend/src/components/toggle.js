@@ -4,13 +4,10 @@ const label = document.querySelector('.label');
 checkbox.addEventListener('change', togglePrices);
 
 function togglePrices(e) {
-    label.classList.toggle('active');
-    checkbox.classList.toggle('active');
-
-    const showYearlyPrices = e.target.checked;
-    if (showYearlyPrices) {
-        document.body.classList.add("show-yearly-prices");
+    const showMonthlyPrices = e.target.checked;
+    if (showMonthlyPrices) {
+        document.body.classList.add("show-monthly-prices");
     } else {
-        document.body.classList.remove("show-yearly-prices");
+        document.body.classList.remove("show-monthly-prices");
     }
 }
