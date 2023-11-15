@@ -26,18 +26,20 @@ import HeroShot from "../components/HeroShot.astro";
     <Section>
         <Wrapper wrapperClass="wrapper">
             <div class="toggle__container col--span-3">
-                <p>Monatlich</p>
-                <input type="checkbox" id="price-toggle" aria-label="Umschalten zwischen jährlichen und monatlichen Preisen." />
+                <p>Jährlich</p>
+                <input
+                    type="checkbox"
+                    id="price-toggle"
+                    aria-label="Umschalten zwischen jährlichen und monatlichen Preisen."
+                />
                 <label class="label" for="price-toggle"
                     ><div class="selected"></div></label
                 >
-                <p>Jährlich</p>
+                <p>Monatlich</p>
             </div>
             <Grid gridColumnClass="grid-3fr">
                 <div class="row--2">
                     <PriceCard
-                        discount="free"
-                        displayClass="hidden"
                         heading="Starter"
                         subheading="+6 Stunden Zumba® Online. Frei für immer."
                         alwaysFree
@@ -56,9 +58,13 @@ import HeroShot from "../components/HeroShot.astro";
                         listItemsExtra={[]}
                         displayUlClass="hidden"
                         borderClass="price-card__border--left"
-                        btn={{
+                        btnMonthly={{
                             href: "https://zim.uscreen.io/orders/customer_info?o=142557",
                             text: "Jetzt loslegen",
+                        }}
+                        btnYearly={{
+                            href: "",
+                            text: "Yearly",
                         }}
                     />
                 </div>
@@ -66,46 +72,48 @@ import HeroShot from "../components/HeroShot.astro";
                     <div class="price__box">
                         <div class="price__card">
                             <PriceCard
-                            discount="Spare 40%"
-                            heading="Premium Abo"
-                            subheading="200+ Stunden Zumba® Online. Monatlich oder jährlich abonnieren."
-                            monthlyPrices={{
-                                oldPrice: "24,99 €",
-                                price: "9,99 € die ersten 3 Monate danach 24,99 €",
-                            }}
-                            yearlyPrices={{
-                                oldPrice: "179,99 €",
-                                price: "119,99 € / Jahr",
-                            }}
-                            listItems={[
-                                "200+ Stunden Zumba® Online",
-                                "regelmäßig neue Workouts",
-                                "13 lizensierte Trainer",
-                                "140+ Stunden Zumba® Fitness",
-                                "25+ Stunden Zumba® Toning",
-                                "24+ Stunden STRONG™ Nation",
-                                "9 Stunden STRONG 30™",
-                                "6+ Stunden Specials",
-                                "500+ Stunden Repertoire",
-                                "Übertragung auf TV möglich",
-                                "Urlaubsfeeling pur",
-                                "Starterpaket inkluse",
-                            ]}
-                            listItemsExtra={[]}
-                            displayUlClass="hidden"
-                            borderClass="price-card__border--center"
-                            btn={{
-                                href: "https://zim.uscreen.io/checkout/new?o=78651&d=ZUMBASTART", // https://zim.uscreen.io/checkout/new?o=77420&d=YEARLYPREMIUM
-                                text: "Jetzt kostenlos testen",
-                            }}
-                        />
+                                discount="Spare 40%"
+                                heading="Premium Abo"
+                                subheading="200+ Stunden Zumba® Online. Monatlich oder jährlich abonnieren."
+                                monthlyPrices={{
+                                    oldPrice: "24,99 €",
+                                    price: "die ersten 3 Monate 9,99 € danach 24,99 €",
+                                }}
+                                yearlyPrices={{
+                                    oldPrice: "179,99 €",
+                                    price: "119,99 € / Jahr",
+                                }}
+                                listItems={[
+                                    "200+ Stunden Zumba® Online",
+                                    "regelmäßig neue Workouts",
+                                    "13 lizensierte Trainer",
+                                    "140+ Stunden Zumba® Fitness",
+                                    "25+ Stunden Zumba® Toning",
+                                    "24+ Stunden STRONG™ Nation",
+                                    "9 Stunden STRONG 30™",
+                                    "6+ Stunden Specials",
+                                    "500+ Stunden Repertoire",
+                                    "Übertragung auf TV möglich",
+                                    "Urlaubsfeeling pur",
+                                    "Starterpaket inkluse",
+                                ]}
+                                listItemsExtra={[]}
+                                displayUlClass="hidden"
+                                borderClass="price-card__border--center"
+                                btnMonthly={{
+                                    href: "https://zim.uscreen.io/checkout/new?o=78651&d=ZUMBASTART", // https://zim.uscreen.io/checkout/new?o=77420&d=YEARLYPREMIUM
+                                    text: "Jetzt kostenlos testen", // Dieses Angebot ist doch gar nicht kostenlos, oder?
+                                }}
+                                btnYearly={{
+                                    href: "",
+                                    text: "Yearly",
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
                 <div class="row--2">
                     <PriceCard
-                        discount=""
-                        displayClass="hidden"
                         heading="VIP-Abo"
                         subheading="Individuelle Betreuung"
                         monthlyPrices={{
@@ -113,18 +121,18 @@ import HeroShot from "../components/HeroShot.astro";
                             price: "199 € / Monat",
                         }}
                         listItems={[
-                             "200+ Stunden Zumba® Online",
-                                "regelmäßig neue Workouts",
-                                "13 lizensierte Trainer",
-                                "140+ Stunden Zumba® Fitness",
-                                "25+ Stunden Zumba® Toning",
-                                "24+ Stunden STRONG™ Nation",
-                                "9 Stunden STRONG 30™",
-                                "6+ Stunden Specials",
-                                "500+ Stunden Repertoire",
-                                "Übertragung auf TV möglich",
-                                "Urlaubsfeeling pur",
-                                "Starterpaket inkluse",
+                            "200+ Stunden Zumba® Online",
+                            "regelmäßig neue Workouts",
+                            "13 lizensierte Trainer",
+                            "140+ Stunden Zumba® Fitness",
+                            "25+ Stunden Zumba® Toning",
+                            "24+ Stunden STRONG™ Nation",
+                            "9 Stunden STRONG 30™",
+                            "6+ Stunden Specials",
+                            "500+ Stunden Repertoire",
+                            "Übertragung auf TV möglich",
+                            "Urlaubsfeeling pur",
+                            "Starterpaket inkluse",
                         ]}
                         listItemsExtra={[
                             "4 Zumba® Online Privatstunden pro Monat mit Kristina",
@@ -133,9 +141,13 @@ import HeroShot from "../components/HeroShot.astro";
                             "persönliche, auf Deine Vorlieben abgestimmte Stunden",
                         ]}
                         borderClass="price-card__border--right"
-                        btn={{
+                        btnMonthly={{
                             href: "https://zim.uscreen.io/checkout/new?o=138160&d=VIP",
                             text: "Jetzt loslegen",
+                        }}
+                        btnYearly={{
+                            href: "",
+                            text: "Yearly",
                         }}
                     />
                 </div>
@@ -145,12 +157,19 @@ import HeroShot from "../components/HeroShot.astro";
 </MainLayout>
 
 <style is:inline>
-    body.show-yearly-prices .monthly {
+    body.show-monthly-prices .yearly,
+    body.show-monthly-prices .btn--yearly {
         display: none;
     }
 
-    body:not(.show-yearly-prices) .yearly {
+    body:not(.show-monthly-prices) .monthly,
+    body:not(.show-monthly-prices) .btn--monthly  {
         display: none;
+    }
+
+    body.show-monthly-prices .price__discount {
+        background-color: transparent;
+        color: transparent;
     }
 
     .toggle__container {
@@ -186,7 +205,7 @@ import HeroShot from "../components/HeroShot.astro";
         transition: left 0.3s ease-in;
     }
 
-    .label.active .selected {
+    input:checked ~ .label .selected {
         left: 2em;
         background-color: #fff;
         border: 2px solid var(--first-color);

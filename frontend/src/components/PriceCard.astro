@@ -1,13 +1,14 @@
 ---
-const { discount = "", displayClass, displayUlClass, heading, subheading = "", btn, alwaysFree, monthlyPrices, yearlyPrices, listItems, listItemsExtra = "", borderClass } = Astro.props;
+const { discount, displayUlClass = "", heading, subheading = "", btnMonthly, btnYearly, alwaysFree, monthlyPrices, yearlyPrices, listItems, listItemsExtra = [], borderClass } = Astro.props;
 
 interface Props {
-        displayClass:[string];
-        discount:[string];
+        displayUlClass?: string;
+        discount?:string;
         listItems: string[];
         listItemsExtra: string[];
         heading: string;
-        btn: { href: string, text: string };
+        btnMonthly?: { href: string, text: string };
+        btnYearly?: { href: string, text: string };
         subheading: string;
         alwaysFree?: boolean;
         monthlyPrices?: { oldPrice: string; price: string };
@@ -17,12 +18,11 @@ interface Props {
 ---
 
 <div class={`price-card__container ${borderClass}`}>
-  <div class={`
-  price__discount
-  ${displayClass}
-  `}>
-    {discount}
-  </div>
+  {discount && 
+    <div class="price__discount">
+      {discount}
+    </div>
+  }
     <h4 class="p__align--center">{ heading }</h4>
     <h6 class="p__align--center">{ subheading }</h6>
     <div class="price__container">
@@ -64,7 +64,8 @@ interface Props {
         }
     </ul>
     <div class="btn__container">
-      {btn && (<a class="btn" href={ btn.href } set:html={ btn.text } />)}
+      {btnMonthly && (<a class="btn btn--monthly" href={ btnMonthly.href } set:html={ btnMonthly.text } />)}
+      {btnYearly && (<a class="btn btn--yearly" href={ btnYearly.href } set:html={ btnYearly.text } />)}
     </div>
 </div>
 
@@ -119,6 +120,7 @@ interface Props {
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 300ms ease-in, color 300ms ease-in;
 }
 
 .price__container p {
