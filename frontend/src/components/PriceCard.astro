@@ -7,8 +7,8 @@ interface Props {
         listItems: string[];
         listItemsExtra: string[];
         heading: string;
-        btnMonthly?: { href: string, text: string };
-        btnYearly?: { href: string, text: string };
+        btnMonthly: { href: string, text: string };
+        btnYearly: { href: string, text: string };
         subheading: string;
         alwaysFree?: boolean;
         monthlyPrices?: { oldPrice: string; price: string };
@@ -64,8 +64,8 @@ interface Props {
         }
     </ul>
     <div class="btn__container">
-      {btnMonthly && (<a class="btn btn--monthly" href={ btnMonthly.href } set:html={ btnMonthly.text } />)}
-      {btnYearly && (<a class="btn btn--yearly" href={ btnYearly.href } set:html={ btnYearly.text } />)}
+      <a class="btn btn--monthly" href={ btnMonthly.href } set:html={ btnMonthly.text } />
+      <a class="btn btn--yearly" href={ btnYearly.href } set:html={ btnYearly.text } />
     </div>
 </div>
 
