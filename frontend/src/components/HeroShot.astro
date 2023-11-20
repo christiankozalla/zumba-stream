@@ -37,6 +37,7 @@ ${backgroundColorClass}
                 {img && 
                 (
                 <img class={`
+                    teaser__img
                     ${teaserImgClass}
                     `} src={ img.src } alt={ img.alt } width={ img.width }/>
                 )
@@ -67,6 +68,10 @@ ${backgroundColorClass}
         grid-row-start: 1;
         max-width: 80%;
         margin: 0 auto;
+    }
+
+    .teaser__img {
+        border-radius: var(--border-radius);
     }
 
     .teaser__text-container {

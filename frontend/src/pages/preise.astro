@@ -5,6 +5,7 @@ import Grid from "../components/Grid.astro";
 import Wrapper from "../components/Wrapper.astro";
 import PriceCard from "../components/PriceCard.astro";
 import HeroShot from "../components/HeroShot.astro";
+import BackgroundImg from "../components/BackgroundImg.astro";
 ---
 
 <MainLayout
@@ -20,9 +21,17 @@ import HeroShot from "../components/HeroShot.astro";
     }}
 >
     <HeroShot
+    img={{
+        src:'/images/header-price-page.jpg',
+        alt:'Angebot von Zumba®-Stream',
+        width:'600'
+    }}
+    backgroundImgClass="teaser__background--color-patch"
         heading="Erst 14 Tage testen. Dann zahlen."
         displayClass="hidden"
     />
+    <BackgroundImg
+    backgroundImgClass="color-patch--purple-left">
     <Section>
         <Wrapper wrapperClass="wrapper">
             <div class="toggle__container col--span-3">
@@ -157,6 +166,7 @@ import HeroShot from "../components/HeroShot.astro";
             </Grid>
         </Wrapper>
     </Section>
+</BackgroundImg>
 </MainLayout>
 
 <style is:inline>
