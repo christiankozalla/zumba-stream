@@ -36,7 +36,7 @@ import BackgroundImg from "../components/BackgroundImg.astro";
     <Section>
         <Wrapper wrapperClass="wrapper">
             <div class="toggle__container col--span-3">
-                <p>Jährlich</p>
+                <p>Monatlich</p>
                 <input
                     type="checkbox"
                     id="price-toggle"
@@ -45,7 +45,7 @@ import BackgroundImg from "../components/BackgroundImg.astro";
                 <label class="label" for="price-toggle"
                     ><div class="selected"></div></label
                 >
-                <p>Monatlich</p>
+                <p>Jährlich</p>
             </div>
             <Grid gridColumnClass="grid-2fr">                
 <!-- 
@@ -88,11 +88,11 @@ import BackgroundImg from "../components/BackgroundImg.astro";
                                 discount="Spare 60%"
                                 heading="Premium Abo"
                                 subheading="200+ Stunden Zumba® Online"
-                                monthlyPrices={{
+                                yearlyPrices={{
                                     oldPrice: "24,99 €",
                                     price: "9,99 € / Monat",
                                 }}
-                                yearlyPrices={{
+                                monthlyPrices={{
                                     oldPrice: "179,99 €",
                                     price: "119,99 € / Jahr",
                                 }}
@@ -114,11 +114,11 @@ import BackgroundImg from "../components/BackgroundImg.astro";
                                 listItemsExtra={[]}
                                 displayUlClass="hidden"
                                 borderClass="price-card__border--center"
-                                btnMonthly={{
+                                btnYearly={{
                                     href: "https://zim.uscreen.io/checkout/new?o=78651&d=ZUMBASTART",
                                     text: "Jetzt kostenlos testen",
                                 }}
-                                btnYearly={{
+                                btnMonthly={{
                                     href: "https://zim.uscreen.io/checkout/new?o=77420&d=YEARLYPREMIUM",
                                     text: "Jetzt kostenlos testen",
                                 }}
@@ -130,7 +130,7 @@ import BackgroundImg from "../components/BackgroundImg.astro";
                     <PriceCard
                         heading="VIP-Abo"
                         subheading="Individuelle Betreuung"
-                        monthlyPrices={{
+                        yearlyPrices={{
                             oldPrice: "249 €",
                             price: "199 € / Monat",
                         }}
@@ -156,11 +156,11 @@ import BackgroundImg from "../components/BackgroundImg.astro";
                             "persönliche, auf Deine Vorlieben abgestimmte Stunden",
                         ]}
                         borderClass="price-card__border--right"
-                        btnMonthly={{
+                        btnYearly={{
                             href: "https://zim.uscreen.io/checkout/new?o=138160&d=VIP",
                             text: "Jetzt loslegen",
                         }}
-                        btnYearly={{
+                        btnMonthly={{
                             href: "https://zim.uscreen.io/checkout/new?o=138160&d=VIP",
                             text: "Jetzt loslegen",
                         }}
