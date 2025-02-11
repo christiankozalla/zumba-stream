@@ -2,7 +2,7 @@
 * @package IcoFont 
 * @version 1.0.1 
 * @author   
-* @copyright 2023 
+* @copyright 2025 
 * @license - https://icofont.com/license/
 */
 
@@ -33,19 +33,9 @@ url("./fonts/icofont.woff") format("woff");
   -webkit-font-smoothing: antialiased;
 }
 
-.icofont-check-circled:before
-{
-  content: "\eed7";
-}
-
 .icofont-instagram:before
 {
   content: "\ed46";
-}
-
-.icofont-twitch:before
-{
-  content: "\ed79";
 }
 
 .icofont-facebook:before
@@ -53,14 +43,24 @@ url("./fonts/icofont.woff") format("woff");
   content: "\ed37";
 }
 
+.icofont-tiktok:before
+{
+  content: "\f033";
+}
+
+.icofont-check-circled:before
+{
+  content: "\eed7";
+}
+
+.icofont-twitch:before
+{
+  content: "\ed79";
+}
+
 .icofont-youtube-play:before
 {
   content: "\ecbb";
-}
-
-.icofont-plus-circle:before
-{
-  content: "\efc0";
 }
 
 .icofont-whatsapp:before
